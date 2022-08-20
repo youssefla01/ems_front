@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {MatDialogModule} from '@angular/material/dialog';
+
+import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { PaneleditComponent } from './paneledit/paneledit.component';
+
 export interface PeriodicElement {
   name: string;
   position: number;
@@ -26,13 +29,17 @@ const ELEMENT_DATA: PeriodicElement[] = [
 
 
 export class ListemployerComponent implements OnInit {
+  constructor(public dialog: MatDialog) {}
+
+  openDialog() {
+    this.dialog.open(PaneleditComponent, {
+      width:'30%'
+    });
+  }
 
   displayedColumns: string[] = ['position', 'name', 'naissance', 'nat','poste', 'type', 'dated','datef','soldec','action'];
   dataSource = ELEMENT_DATA;
 
-  constructor() { 
-    
-  }
 
   ngOnInit(): void {
   }

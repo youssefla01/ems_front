@@ -17,6 +17,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { PaneleditComponent } from 'src/app/modules/listemployer/paneledit/paneledit.component';
+
 
 
 
@@ -31,7 +33,8 @@ import { MatInputModule } from '@angular/material/input';
     DefaultComponent,
     DashboardComponent,
     PostsComponent,
-    ListemployerComponent
+    ListemployerComponent,
+    PaneleditComponent
     
     
   ],
