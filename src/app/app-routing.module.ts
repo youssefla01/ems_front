@@ -1,7 +1,29 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { DefaultComponent } from './layouts/default/default.component';
+import { DashboardComponent } from './modules/dashboard/dashboard.component';
+import { PostsComponent } from './modules/posts/posts.component';
+import { ListemployerComponent } from 'src/app/modules/listemployer/listemployer.component';
 
-const routes: Routes = [];
+
+
+const routes: Routes = [{
+  path: '',
+  component: DefaultComponent,
+  
+  children: [{
+    path: '',
+    component: DashboardComponent
+  },{
+     path:'posts',
+     component: PostsComponent 
+  },{
+    path:'listemployer',
+     component: ListemployerComponent 
+  }
+]
+
+}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

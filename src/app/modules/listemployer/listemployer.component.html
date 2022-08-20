@@ -1,0 +1,90 @@
+<h2>Liste employer</h2>
+
+<mat-divider></mat-divider>
+
+<div  fxLayoutAlign="flex-end" class="btn">
+    <button mat-raised-button color="primary">
+        + Ajouter Employer
+    </button>
+</div>
+
+
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Nom et prenom </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="naissance">
+      <th mat-header-cell *matHeaderCellDef> Date_Naissance </th>
+      <td mat-cell *matCellDef="let element"> {{element.naissance}} </td>
+    </ng-container>
+  
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="nat">
+      <th mat-header-cell *matHeaderCellDef> Nationalité </th>
+      <td mat-cell *matCellDef="let element"> {{element.nat}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="poste">
+        <th mat-header-cell *matHeaderCellDef> Poste </th>
+        <td mat-cell *matCellDef="let element"> {{element.poste}} </td>
+      </ng-container>
+
+       <!-- Symbol Column -->
+    <ng-container matColumnDef="type">
+        <th mat-header-cell *matHeaderCellDef>  Type Contrat </th>
+        <td mat-cell *matCellDef="let element"> {{element.type}} </td>
+      </ng-container>
+
+     <!-- Symbol Column -->
+     <ng-container matColumnDef="dated">
+        <th mat-header-cell *matHeaderCellDef> Date_début </th>
+        <td mat-cell *matCellDef="let element"> {{element.dated}} </td>
+      </ng-container>
+
+       <!-- Symbol Column -->
+    <ng-container matColumnDef="datef">
+        <th mat-header-cell *matHeaderCellDef> Date_fin </th>
+        <td mat-cell *matCellDef="let element"> {{element.datef}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="soldec">
+        <th mat-header-cell *matHeaderCellDef> Solde_congé </th>
+        <td mat-cell *matCellDef="let element"> {{element.soldec}} jour</td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef> Action</th>
+        <td mat-cell *matCellDef="let element">
+            <button mat-icon-button  color="primary">
+                <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button color="warn">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </td>
+      </ng-container>
+
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+ 
+  
+  
