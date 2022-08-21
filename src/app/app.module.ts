@@ -7,21 +7,23 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DefaultModule } from './layouts/default/default.module';
 import { AuthModule } from './auth/auth.module';
 import { HttpClientModule } from '@angular/common/http';
+
 import { FormsModule } from '@angular/forms';
 
-
-
-
-
-
-
-
+import { NewdemandeComponent } from './modules/conge/newdemande/newdemande.component';
+import { DemandeaccepterComponent } from './modules/conge/demandeaccepter/demandeaccepter.component';
+import { DemanderefuserComponent } from './modules/conge/demanderefuser/demanderefuser.component';
 
 
 
 @NgModule({
   declarations: [
-    AppComponent,  
+    AppComponent,
+   
+    NewdemandeComponent,
+         DemandeaccepterComponent,
+         DemanderefuserComponent,
+     
   ],
   imports: [
     BrowserModule,

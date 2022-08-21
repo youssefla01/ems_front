@@ -1,0 +1,26 @@
+<div class="row"  >
+
+    <div class="col" *ngFor="let i of dataArray"   >
+        
+        <div class="card border-success mb-3" style="max-width: 18rem;">
+       
+            <div class="card-header">
+              <div class="card-body text-success">
+              <h5 class="card-title">{{i.iduse}}</h5>
+              <p class="card-text"> demander un conger !! </p>
+              </div>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"> date debut congé :  {{i.datedebut_c}}</li>
+              <li class="list-group-item"> date fin congé :  {{i.datedefin_c}}</li>
+              <li class="list-group-item">statut :   {{i.statut}}  </li>
+            </ul>
+            <div class="card-body">
+              <button type="button" class="btn btn-outline-success">accepter</button>
+              <button type="button" class="btn btn-outline-danger" (click)="deleted(i._id)" >refuser</button>
+            </div>
+          </div>
+    
+    </div>
+    
+  </div>

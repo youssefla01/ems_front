@@ -1,0 +1,45 @@
+<main style="margin-top: 58px">
+    <div class="container pt-4">
+      <section class="mb-4">
+        <div class="card">
+          <div class="card-header text-center py-3">
+            <h5 class="mb-0 text-center">
+              <strong>Liste d'emploiyer Existance </strong>
+            </h5>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-hover text-nowrap">
+                <thead class="thead-dark">
+                  <tr>
+                   
+                    <th scope="col">id</th>
+                    <th scope="col">iduse</th>
+                    <th scope="col">datedebut_c</th>
+                    <th scope="col">datedefin_c</th>
+                    <th scope="col">statut</th>
+                    <th scope="col" >desition</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let i of arraylist">
+                   
+                    <th cope="row">{{i._id}}</th>
+                   
+                    <td>{{i.iduse}}</td>
+                    <td>{{i.datedebut_c}}</td>
+                    <td>{{i.datedefin_c}}</td>
+                    <td>{{i.statut}}</td>
+                    <td >{{i.desition}}</td>
+                   
+                    
+                 
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+</main>
+
+
