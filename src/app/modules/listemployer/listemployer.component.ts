@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { ApiiService } from 'src/app/service/apii.service';
 import { PaneleditComponent } from './paneledit/paneledit.component';
 
 export interface PeriodicElement {
@@ -29,7 +30,11 @@ const ELEMENT_DATA: PeriodicElement[] = [
 
 
 export class ListemployerComponent implements OnInit {
-  constructor(public dialog: MatDialog) {}
+  dataArray : any 
+  constructor(public dialog: MatDialog , public ser:ApiiService) {
+    this.ser.afficher().subscribe(data=>this.dataArray=data) 
+
+  }
 
   openDialog() {
     this.dialog.open(PaneleditComponent, {

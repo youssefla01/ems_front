@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DefaultModule } from './layouts/default/default.module';
 import { AuthModule } from './auth/auth.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -26,7 +27,8 @@ import { AuthModule } from './auth/auth.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     DefaultModule,
-    AuthModule
+    AuthModule,
+    HttpClientModule
     
   ],
   providers: [],
