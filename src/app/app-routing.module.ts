@@ -9,13 +9,34 @@ import { DemandeaccepterComponent } from './modules/conge/demandeaccepter/demand
 import { DemanderefuserComponent } from './modules/conge/demanderefuser/demanderefuser.component';
 import { GardeGuard } from './gardes/garde.guard';
 import { LoginComponent } from './auth/components/login/login.component';
+import { UserComponent } from './user/user/user.component';
+import { GardeuserGuard } from './gardeutilisateur/gardeuser.guard';
+import { DemandeComponent } from './user/demande/demande.component';
 
 
 const routes: Routes = [
+
+
   
   {
     path: '',
-    component: LoginComponent, } ,
+    component: LoginComponent, } , 
+
+    {
+      path: 'user',
+      component: UserComponent,
+      
+      children: [{
+        path: '',
+        component: UserComponent,canActivate:[GardeuserGuard]
+      } , 
+      {
+        path: 'demande',
+        component: DemandeComponent,canActivate:[GardeuserGuard]
+      }
+    
+    
+    ]},
 
   {
   path: 'admin',

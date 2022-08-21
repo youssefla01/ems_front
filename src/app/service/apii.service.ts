@@ -98,5 +98,18 @@ acceder()
  }
 
 
+ accederuser()
+ {
+    if(this.data.id=='199625')
+    {   this.accer=true ; 
+        return this.accer
+    }
+    else 
+    {
+        this.accer=false ; 
+        return this.accer 
+    }
+ }
+
 
 }
