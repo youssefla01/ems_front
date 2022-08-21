@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DefaultModule } from './layouts/default/default.module';
 import { AuthModule } from './auth/auth.module';
 import { HttpClientModule } from '@angular/common/http';
+import { CongeComponent } from './modules/conge/conge.component';
 
 
 
@@ -20,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
-    AppComponent,  
+    AppComponent,
+    CongeComponent,  
   ],
   imports: [
     BrowserModule,

@@ -1,17 +1,24 @@
 <mat-nav-list>
     <div class="profile-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShN0nuLT7HIpIANuDi6wbMKpeuCgZsl2PtAA&usqp=CAU">
         <div class="header">
-            <h2>ADMIN 1</h2>
+            <h2><b>ADMIN 1</b></h2>
         </div>
-        <img src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Soufiane FADIL">
     </div>
 
     <mat-divider></mat-divider>
 
     <h2 matSubheader>Pages</h2>
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/">Dashboard</a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/"><mat-icon>home</mat-icon> Dashboard</a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/listemployer"><mat-icon>supervisor_account</mat-icon> Liste employer</a>
+    <a mat-list-item routerLinkActive="list-item-active" [matMenuTriggerFor]="menu" routerLink="/listemployer"><mat-icon>list</mat-icon> Demandes de congé</a>
+    <mat-menu #menu="matMenu">
+        <a mat-menu-item routerLinkActive="list-item-active"  routerLink="/listemployer"><mat-icon>note_add</mat-icon> Nouveau Demande</a>
+        <a mat-menu-item routerLinkActive="list-item-active"  routerLink="/listemployer"><mat-icon>done_outline</mat-icon> Demandes Accepter</a>
+        <a mat-menu-item routerLinkActive="list-item-active"  routerLink="/listemployer"><mat-icon>thumb_down</mat-icon> Demandes Refuser</a>
+        
+      </mat-menu>
     <a mat-list-item routerLinkActive="list-item-active" routerLink="/posts">posts</a>
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/listemployer"><mat-icon>list</mat-icon> Liste employer</a>
     <a mat-list-item routerLinkActive="list-item-active" routerLink="/articles">Articles</a>
 
     <mat-divider></mat-divider>
