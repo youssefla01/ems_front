@@ -1,4 +1,5 @@
 <h1 mat-dialog-title>Ajouter Employe Form</h1>
+<form #form="" class="row g-3" (ngSubmit)="add(form)">
 <div mat-dialog-content>
     <mat-form-field appearance="outline">
         <mat-label>Nom</mat-label>
@@ -66,3 +67,4 @@
 <button mat-raised-button color="warn" mat-dialog-close>Fermer</button>
 <button style="margin-left:8px" mat-raised-button color="primary">Ajouter</button>
 </div>
+</form>

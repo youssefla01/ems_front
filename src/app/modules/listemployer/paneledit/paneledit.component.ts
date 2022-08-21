@@ -1,5 +1,7 @@
 import { Component, OnInit,ViewEncapsulation } from '@angular/core';
 import {MatCalendarCellClassFunction} from '@angular/material/datepicker';
+import { Router } from '@angular/router';
+import { ApiiService } from 'src/app/service/apii.service';
 
 @Component({
   selector: 'app-paneledit',
@@ -21,9 +23,26 @@ export class PaneleditComponent implements OnInit {
     return '';
   };
 
-  constructor() { }
+  constructor(private api:ApiiService  , private rout:Router) { }
 
   ngOnInit(): void {
   }
+  add(form:any)
+  {
+    try{
+   let data=form.value ;
+   console.log(data)
+   this.api.adddemande(data).subscribe(data=>console.log(data))
+   this.rout.navigate(['/admin/alldemande']) 
+   
+  }
+   
+   catch(e)
+   {
+    console.log("errur est :  "+e)
+   
 
+   }
+  
+  }
 }
