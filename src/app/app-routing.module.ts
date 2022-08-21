@@ -7,39 +7,46 @@ import { ListemployerComponent } from 'src/app/modules/listemployer/listemployer
 import { NewdemandeComponent } from './modules/conge/newdemande/newdemande.component';
 import { DemandeaccepterComponent } from './modules/conge/demandeaccepter/demandeaccepter.component';
 import { DemanderefuserComponent } from './modules/conge/demanderefuser/demanderefuser.component';
+import { GardeGuard } from './gardes/garde.guard';
+import { LoginComponent } from './auth/components/login/login.component';
 
 
+const routes: Routes = [
+  
+  {
+    path: '',
+    component: LoginComponent, } ,
 
-const routes: Routes = [{
+  {
   path: 'admin',
   component: DefaultComponent,
   
   children: [{
     path: '',
-    component: DashboardComponent
+    component: DashboardComponent,canActivate:[GardeGuard]
   },{
      path:'posts',
-     component: PostsComponent 
+     component: PostsComponent ,canActivate:[GardeGuard]
   },{
     path:'listemployer',
-     component: ListemployerComponent 
+     component: ListemployerComponent ,canActivate:[GardeGuard]
   },
 
   {
     path:'newdemande',
-     component: NewdemandeComponent 
+     component: NewdemandeComponent ,canActivate:[GardeGuard]
   }
   ,
 
   {
     path:'demandeaccepter',
-     component:DemandeaccepterComponent
+     component:DemandeaccepterComponent,canActivate:[GardeGuard]
   }
   ,
 
   {
     path:'demanderefuser',
-     component:  DemanderefuserComponent
+     component:  DemanderefuserComponent,canActivate:[GardeGuard]
   }
 ]
 

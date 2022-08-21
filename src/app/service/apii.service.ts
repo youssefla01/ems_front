@@ -53,4 +53,50 @@ adddemande(add_dem:any) : Observable<any> {
 
   return this.http.get('http://localhost:4000/result_demande_accepter');  
  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ data = {
+  id:'199625',
+  nam:'redouane',
+  prenom:'aitelbacha' 
+}
+
+
+
+accer=false ;
+
+
+acceder()
+ {
+    if(this.data.id=='199625')
+    {   this.accer=true ; 
+        return this.accer
+    }
+    else 
+    {
+        this.accer=false ; 
+        return this.accer 
+    }
+ }
+
+
+
 }
