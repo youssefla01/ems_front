@@ -1,1 +1,33 @@
-<p>user works!</p>
+<form #form="ngForm" class="row g-3" (ngSubmit)="add(form)">
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label" >iduse</label>
+      <input type="email" class="form-control" ngModel  required  #iduse="ngModel"  name="iduse" placeholder="iduse">
+      <div class="alert-danger"  *ngIf="iduse.touched && iduse.invalid"> remplissage de votre id est obligatoir !</div>
+      
+    </div>
+
+
+
+    <div class="col-md-6">
+      <label for="inputPassword4" class="form-label"   >datedebut_c     :</label> 
+      <input type="date"  ngModel #datedeb="ngModel" required name="datedebut_c" placeholder="datedebut_c">
+      <div class="alert-danger" *ngIf="datedeb.touched  && datedeb.invalid "> remplissage de votre date debut est obligatoir !</div>
+      
+    </div>
+    <div class="col-12">
+        <label for="inputAddress" class="form-label"  >Datedefin_c       :</label>
+        <input type="date" ngModel #datefin="ngModel" required  name="datedefin_c" placeholder="datedefin_c">
+        <div class="alert-danger" *ngIf="datefin.touched  && datefin.invalid "> remplissage de votre date fin  est obligatoir !</div>
+      </div>
+ 
+    <div class="col-12">
+      <label for="inputAddress2" class="form-label" >Statut</label>
+      <input type="text" class="form-control" ngModel  #statut="ngModel"   required  name="statut" placeholder="statut">
+      <div class="alert-danger" *ngIf="statut.touched   && statut.invalid "> remplissage de votre statut est obligatoir !</div>
+    </div>
+    <div class="col-12">
+      <button type="submit" [disabled]="form.invalid" class="btn btn-primary" >ajouter</button>
+    </div>
+</form>
+
+

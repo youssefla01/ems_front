@@ -14,7 +14,7 @@ import { NewdemandeComponent } from './modules/conge/newdemande/newdemande.compo
 import { DemandeaccepterComponent } from './modules/conge/demandeaccepter/demandeaccepter.component';
 import { DemanderefuserComponent } from './modules/conge/demanderefuser/demanderefuser.component';
 import { UserComponent } from './user/user/user.component';
-import { DemandeComponent } from './user/demande/demande.component';
+
 
 
 
@@ -29,7 +29,7 @@ import { DemandeComponent } from './user/demande/demande.component';
          DemandeaccepterComponent,
          DemanderefuserComponent,
          UserComponent,
-         DemandeComponent,
+ 
          
         
          
