@@ -21,7 +21,7 @@ export interface IPost {
 export class PostsComponent implements OnInit {
 
   dataArray : any=[]
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol','action'];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -34,7 +34,7 @@ export class PostsComponent implements OnInit {
   
   ngOnInit(): void {
 
-    this.ser. alldemande().subscribe(data=>this.dataArray=data)
+    this.ser.alldemande().subscribe(data=>this.dataArray=data)
     
     
       

@@ -14,7 +14,7 @@ export class NewdemandeComponent implements OnInit {
   constructor(private ser:ApiiService , private rout:Router) {
 
    
-    this.ser. alldemande().subscribe(data=>this.dataArray=data)
+    this.ser.demandesans_desition().subscribe(data=>this.dataArray=data)
     
    }
    deleted(id:any)

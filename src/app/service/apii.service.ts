@@ -24,9 +24,7 @@ adddemande(add_dem:any) : Observable<any> {
 
  }
 
-
-
-
+alldemande() :Observable<any>{ return this.http.get('http://localhost:4000/demande_all')};
 
  afficheruser()
  {
@@ -34,7 +32,7 @@ adddemande(add_dem:any) : Observable<any> {
 
  }
   
- alldemande()
+ demandesans_desition()
  {
   return this.http.get('http://localhost:4000/result_demande'); 
  }
