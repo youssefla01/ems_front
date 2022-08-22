@@ -21,6 +21,9 @@ import { PaneleditComponent } from 'src/app/modules/listemployer/paneledit/panel
 import {MatSelectModule} from '@angular/material/select';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
+import { PanelajoutComponent } from 'src/app/modules/listemployer/panelajout/panelajout.component';
+import { ContactComponent } from 'src/app/modules/contact/contact.component';
+
 
 
 
@@ -38,7 +41,9 @@ import {MatNativeDateModule} from '@angular/material/core';
     DashboardComponent,
     PostsComponent,
     ListemployerComponent,
-    PaneleditComponent
+    PaneleditComponent,
+    PanelajoutComponent,
+    ContactComponent,
     
     
   ],
@@ -59,7 +64,9 @@ import {MatNativeDateModule} from '@angular/material/core';
     MatInputModule,
     MatSelectModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    
+   
 
     
     

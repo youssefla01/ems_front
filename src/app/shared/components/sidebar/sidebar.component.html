@@ -8,7 +8,7 @@
 
     <mat-divider></mat-divider>
 
-    <h2 matSubheader>Pages</h2>
+    <h2 matSubheader>ADMIN :</h2>
     <a mat-list-item routerLinkActive="list-item-active" routerLink="/admin"><mat-icon>home</mat-icon> Dashboard</a>
     <a mat-list-item routerLinkActive="list-item-active" routerLink="/admin/listemployer"><mat-icon>supervisor_account</mat-icon> Liste employer</a>
     <a mat-list-item routerLinkActive="list-item-active" [matMenuTriggerFor]="menu" routerLink="/newdemande"><mat-icon>list</mat-icon> Demandes de congé</a>
@@ -18,21 +18,22 @@
         <a mat-menu-item routerLinkActive="list-item-active"  routerLink="/admin/demanderefuser"><mat-icon>thumb_down</mat-icon> Demandes Refuser</a>
         
       </mat-menu>
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/admin/posts">posts</a>
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/admin/articles">Articles</a>
+      <h2 matSubheader>Utilisateur :</h2>
+      <a mat-list-item routerLinkActive="list-item-active" routerLink="/demande"><mat-icon>launch</mat-icon>Demander un congé </a>
+      <a mat-list-item routerLinkActive="list-item-active" routerLink="/user"><mat-icon>book</mat-icon> Mes Demandes</a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/admin/posts">Test</a>
+    
+   
+    
 
     <mat-divider></mat-divider>
 
     <h2 matSubheader>Tools</h2>
 
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/contacts">
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/admin/contact">
         <mat-icon>import_contacts</mat-icon>
         Contacts
     </a>
 
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/contacts">
-        <mat-icon>contact_phone</mat-icon>
-        Leads
-    </a>
-
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/">Test</a>
 </mat-nav-list>

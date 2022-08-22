@@ -18,6 +18,9 @@ import { DemandeComponent } from './user/demande/demande.component';
 
 
 
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +30,10 @@ import { DemandeComponent } from './user/demande/demande.component';
          DemanderefuserComponent,
          UserComponent,
          DemandeComponent,
+         
+        
+         
+       
      
   ],
   imports: [
