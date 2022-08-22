@@ -23,6 +23,11 @@ adddemande(add_dem:any) : Observable<any> {
   return this.http.post('http://localhost:4000/ajouterdemande',add_dem)
 
  }
+ addduser(add_emp:any) : Observable<any> {
+  return this.http.post('http://localhost:4000/ajouter_emploiyeur',add_emp)
+
+ }
+
 
 alldemande() :Observable<any>{ return this.http.get('http://localhost:4000/demande_all')};
 

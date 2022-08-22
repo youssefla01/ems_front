@@ -23,7 +23,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import { PanelajoutComponent } from 'src/app/modules/listemployer/panelajout/panelajout.component';
 import { ContactComponent } from 'src/app/modules/contact/contact.component';
-
+import {FormsModule , ReactiveFormsModule} from '@angular/forms';
 
 
 
@@ -65,6 +65,7 @@ import { ContactComponent } from 'src/app/modules/contact/contact.component';
     MatSelectModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    FormsModule,
     
    
 

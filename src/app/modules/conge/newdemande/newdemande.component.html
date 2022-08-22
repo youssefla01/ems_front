@@ -14,11 +14,12 @@
               </div>
             </div>
             <ul class="list-group list-group-flush">
-              <li class="list-group-item"> date debut congé :  {{i.datedebut_c}}</li>
-              <li class="list-group-item"> date fin congé :  {{i.datedefin_c}}</li>
+              <li class="list-group-item"> date debut congé :  {{i.datedebut_c | date : "MM/dd/yy"}}</li>
+              <li class="list-group-item"> date fin congé :  {{i.datedefin_c| date : "MM/dd/yy"}}</li>
               <li class="list-group-item">statut :   {{i.statut}}  </li>
             </ul>
             <div class="card-body">
+              
               <button type="button" class="btn btn-outline-success">accepter</button>
               <button type="button" class="btn btn-outline-danger" (click)="deleted(i._id)" >refuser</button>
             </div>
