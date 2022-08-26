@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiiService } from 'src/app/service/apii.service';
-
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-panelajout',
   templateUrl: './panelajout.component.html',
@@ -9,7 +9,18 @@ import { ApiiService } from 'src/app/service/apii.service';
 })
 export class PanelajoutComponent implements OnInit {
 
-  constructor(private api:ApiiService  , private rout:Router) { }
+  constructor(private api:ApiiService  , private rout:Router , public _location:Location) { }
+
+
+
+
+ 
+    refresh(): void {
+        this.rout.navigateByUrl("/admin", { skipLocationChange: true }).then(() => {
+        console.log(decodeURI(this._location.path()));
+        this.rout.navigate([decodeURI(this._location.path())]);
+        });
+    }
 
   ngOnInit(): void {
   }
@@ -23,6 +34,7 @@ export class PanelajoutComponent implements OnInit {
    this.api.addduser(data).subscribe(data=>console.log(data))
    alert("emploiyer est  bien ajouter ! ")
    this.rout.navigate(['/admin/listemployer']) 
+
    
   }
    

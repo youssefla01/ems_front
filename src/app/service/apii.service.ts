@@ -6,7 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiiService {
-
+  headers = new HttpHeaders().set('Content-Type', 'application/json');
+  baseUri: string = 'http://localhost:4000/';
   constructor(private http:HttpClient ) {}
 
 
@@ -20,6 +21,7 @@ return this.http.get('http://localhost:4000/result_emploiyeur');
 }
 
 adddemande(add_dem:any) : Observable<any> {
+ 
   return this.http.post('http://localhost:4000/ajouterdemande',add_dem)
 
  }
@@ -41,9 +43,15 @@ alldemande() :Observable<any>{ return this.http.get('http://localhost:4000/deman
  {
   return this.http.get('http://localhost:4000/result_demande'); 
  }
- deletdemande(id:any)
+ deletdemande(id:any): Observable<any>
  {
-  return this.http.delete('http://localhost:4000/delet_demande/'+id)
+
+  let url = `${this.baseUri}/delet_demande/${id}`;
+  return this.http
+    .delete(url, { headers: this.headers })
+   ;
+
+  
  }
  
  refuser ()
@@ -56,7 +64,12 @@ alldemande() :Observable<any>{ return this.http.get('http://localhost:4000/deman
 
   return this.http.get('http://localhost:4000/result_demande_accepter');  
  }
+ deleteemploiyeur(_id :any): Observable<any> {
 
+  
+  return this.http.delete('http://localhost:4000/delet_emploiyeur/'+_id)
+
+ }
 
 
 

@@ -52,6 +52,20 @@ export class ListemployerComponent implements AfterViewInit {
     
 
   }
+  deleteemploi(id: any ,i: number)
+  
+  {
+     this.ser.deleteemploiyeur(id).subscribe(Response=>{
+      
+      console.log(Response)
+      this.dataArray.splice(i,1)
+
+    
+    })
+
+  }
+
+
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;

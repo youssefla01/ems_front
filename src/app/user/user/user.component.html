@@ -1,8 +1,8 @@
 <form #form="ngForm" class="row g-3" (ngSubmit)="add(form)">
     <div class="col-md-6">
-      <label for="inputEmail4" class="form-label" >iduse</label>
-      <input type="email" class="form-control" ngModel  required  #iduse="ngModel"  name="iduse" placeholder="iduse">
-      <div class="alert-danger"  *ngIf="iduse.touched && iduse.invalid"> remplissage de votre id est obligatoir !</div>
+      <label for="inputEmail4" class="form-label" >id_emp</label>
+      <input type="text" class="form-control" ngModel  required  #id_emp="ngModel"  name="id_emp" placeholder="id_emp">
+      <div class="alert-danger"  *ngIf="id_emp.touched && id_emp.invalid"> remplissage de votre id est obligatoir !</div>
       
     </div>
 

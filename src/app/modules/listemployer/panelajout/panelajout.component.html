@@ -36,13 +36,19 @@
     <input type="text" class="form-control" ngModel  required  #post="ngModel"  name="post" placeholder="post">
     <div class="alert-danger"  *ngIf="post.touched && post.invalid"> remplissage de votre id est obligatoir !</div>
     
-  </div> <div class="col-md-6">
-    <label for="inputEmail4" class="form-label" >type_contrat</label>
-    <input type="text" class="form-control" ngModel  required  #type_contrat="ngModel"  name="type_contrat" placeholder="type_contrat">
-    <div class="alert-danger"  *ngIf="type_contrat.touched && type_contrat.invalid"> remplissage de votre id est obligatoir !</div>
-    
-  </div>
+  </div> 
 
+  <div class="form-group col-md-4">
+    <label for="type_contrat">type_contrat</label>
+    <select name="type_contrat" class="form-control"   ngModel  required  #type_contrat="ngModel"   placeholder="type_contrat" >
+      <option selected>CDD</option>
+      <option selected>CDI</option>
+      <option selected>ALTERNANCE</option>
+   
+    </select>
+    <div class="alert-danger"  *ngIf="type_contrat.touched && type_contrat.invalid"> remplissage de votre id est obligatoir !</div>
+  </div>
+  
   <div class="col-12">
       <label for="inputAddress" class="form-label"  >debutcontrat       :</label>
       <input type="date" ngModel #debutcontrat="ngModel" required  name="debutcontrat" placeholder="debutcontrat">
@@ -53,16 +59,9 @@
       <input type="date" ngModel #fincontrat="ngModel" required  name="fincontrat" placeholder="fincontrat">
       <div class="alert-danger" *ngIf="fincontrat.touched  && fincontrat.invalid "> remplissage de votre date fin  est obligatoir !</div>
     </div>
-
   <div class="col-12">
-    <label for="inputAddress2" class="form-label" >iduser</label>
-    <input type="text" class="form-control" ngModel  #iduser="ngModel"   required  name="iduser" placeholder="iduser">
-    <div class="alert-danger" *ngIf="iduser.touched   && iduser.invalid "> remplissage de votre statut est obligatoir !</div>
-  </div>
-  <div class="col-12">
-   
     <button mat-raised-button color="warn" mat-dialog-close>Fermer</button>
-    <button style="margin-left:8px" mat-raised-button color="primary"  [disabled]="form.invalid" >Ajouter</button>
+    <button style="margin-left:8px" mat-raised-button color="primary"  [disabled]="form.invalid"    >Ajouter</button>
     <label for=""></label>
   </div>
 </form>
