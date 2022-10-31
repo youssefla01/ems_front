@@ -6,14 +6,18 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DefaultModule } from './layouts/default/default.module';
 import { AuthModule } from './auth/auth.module';
-import { HttpClientModule } from '@angular/common/http';
 
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+
 
 import { NewdemandeComponent } from './modules/conge/newdemande/newdemande.component';
 import { DemandeaccepterComponent } from './modules/conge/demandeaccepter/demandeaccepter.component';
 import { DemanderefuserComponent } from './modules/conge/demanderefuser/demanderefuser.component';
 import { UserComponent } from './user/user/user.component';
+import { TestComponent } from './modules/test/test.component';
+
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+
 
 
 
@@ -24,11 +28,13 @@ import { UserComponent } from './user/user/user.component';
 @NgModule({
   declarations: [
     AppComponent,
-   
+    
     NewdemandeComponent,
          DemandeaccepterComponent,
          DemanderefuserComponent,
          UserComponent,
+         TestComponent,
+
  
          
         
@@ -43,7 +49,7 @@ import { UserComponent } from './user/user/user.component';
     DefaultModule,
     FormsModule,
     AuthModule,
-    HttpClientModule
+    HttpClientModule, ReactiveFormsModule 
     
   ],
   providers: [],

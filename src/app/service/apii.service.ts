@@ -72,7 +72,11 @@ alldemande() :Observable<any>{ return this.http.get('http://localhost:4000/deman
  }
 
 
+gettoken (){ 
+  
+  return this.http.get('http://localhost:4000/tokentest')
 
+}
 
 
 
@@ -116,7 +120,7 @@ acceder()
 
  accederuser()
  {
-    if(this.data.id=='199625')
+    if(this.data.id=='1996625')
     {   this.accer=true ; 
         return this.accer
     }
@@ -126,6 +130,10 @@ acceder()
         return this.accer 
     }
  }
+
+
+
+ 
 
 
 }

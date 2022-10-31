@@ -13,13 +13,22 @@ import { UserComponent } from './user/user/user.component';
 import { GardeuserGuard } from './gardeutilisateur/gardeuser.guard';
 
 import { ContactComponent } from 'src/app/modules/contact/contact.component';
+import { TestComponent } from './modules/test/test.component';
+
+
 
 
 const routes: Routes = [
 
 
+// test 
+{
+  path:'test',
+   component:  TestComponent
+} ,
   
   {
+   
     path: '',
     component: LoginComponent, } , 
 
@@ -29,8 +38,13 @@ const routes: Routes = [
       
       children: [{
         path: '',
-        component: UserComponent,canActivate:[GardeuserGuard]
-      } , 
+        component: UserComponent,canActivate:[GardeGuard]
+      } ,  
+      {
+        path:'contact',
+         component:  ContactComponent,canActivate:[GardeGuard]
+      }
+     
       
     
     
@@ -42,13 +56,13 @@ const routes: Routes = [
   
   children: [{
     path: '',
-    component: DashboardComponent,canActivate:[GardeGuard]
+    component: DashboardComponent,canActivate:[GardeGuard] 
   },{
      path:'posts',
      component: PostsComponent ,canActivate:[GardeGuard]
   },{
     path:'listemployer',
-     component: ListemployerComponent ,canActivate:[GardeGuard]
+     component: ListemployerComponent ,canActivate:[GardeGuard] 
   },
 
   {
@@ -67,12 +81,13 @@ const routes: Routes = [
     path:'demanderefuser',
      component:  DemanderefuserComponent,canActivate:[GardeGuard]
   }
-  ,
-  {
-    path:'contact',
-     component:  ContactComponent,canActivate:[GardeGuard]
-  }
+
+
+ 
+ 
 ]
+
+
 
 }];
 
