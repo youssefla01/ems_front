@@ -43,14 +43,12 @@ alldemande() :Observable<any>{ return this.http.get('http://localhost:4000/deman
  {
   return this.http.get('http://localhost:4000/result_demande'); 
  }
- deletdemande(id:any): Observable<any>
+ deletdemande(_id:any): Observable<any>
  {
 
-  let url = `${this.baseUri}/delet_demande/${id}`;
-  return this.http
-    .delete(url, { headers: this.headers })
+  return this.http.delete('http://localhost:4000/delet_demande/'+_id)
    ;
-
+  
   
  }
  
@@ -73,7 +71,7 @@ alldemande() :Observable<any>{ return this.http.get('http://localhost:4000/deman
 
 
 gettoken (){ 
-  
+
   return this.http.get('http://localhost:4000/tokentest')
 
 }

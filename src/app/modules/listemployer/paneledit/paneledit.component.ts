@@ -2,6 +2,7 @@ import { Component, OnInit,ViewEncapsulation } from '@angular/core';
 import {MatCalendarCellClassFunction} from '@angular/material/datepicker';
 import { Router } from '@angular/router';
 import { ApiiService } from 'src/app/service/apii.service';
+import { ListemployerComponent } from '../listemployer.component';
 
 @Component({
   selector: 'app-paneledit',
@@ -10,7 +11,11 @@ import { ApiiService } from 'src/app/service/apii.service';
  
 })
 export class PaneleditComponent implements OnInit {
+   a ="redouane"
+   tabedite ={
 
+  
+  }
   dateClass: MatCalendarCellClassFunction<Date> = (cellDate, view) => {
     // Only highligh dates inside the month view.
     if (view === 'month') {
@@ -23,7 +28,15 @@ export class PaneleditComponent implements OnInit {
     return '';
   };
 
-  constructor(private api:ApiiService  , private rout:Router) { }
+
+
+  constructor(private api:ApiiService  , private rout:Router ,  private data : ListemployerComponent) { 
+
+    this.tabedite=this.data.tab
+    
+   console.log(this.tabedite)
+
+  }
 
   ngOnInit(): void {
   }
@@ -37,6 +50,9 @@ export class PaneleditComponent implements OnInit {
    
   }
    
+
+   
+
    catch(e)
    {
     console.log("errur est :  "+e)

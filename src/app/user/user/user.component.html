@@ -1,4 +1,4 @@
-<form #form="ngForm" class="row g-3" (ngSubmit)="add(form)">
+<form #form="ngForm" class="form-check" (ngSubmit)="add(form)">
     <div class="col-md-6">
       <label for="inputEmail4" class="form-label" >id_emp</label>
       <input type="text" class="form-control" ngModel  required  #id_emp="ngModel"  name="id_emp" placeholder="id_emp">
@@ -7,7 +7,16 @@
     </div>
 
 
+    <div class="form-row">
+      <div class="col">
+        <input type="text" class="form-control" placeholder="First name">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Last name">
+      </div>
+    </div>
 
+    
     <div class="col-md-6">
       <label for="inputPassword4" class="form-label"   >datedebut_c     :</label> 
       <input type="date"  ngModel #datedeb="ngModel" required name="datedebut_c" placeholder="datedebut_c">
@@ -29,5 +38,16 @@
       <button type="submit" [disabled]="form.invalid" class="btn btn-primary" >ajouter</button>
     </div>
 </form>
+
+
+
+
+
+
+
+
+
+
+
 
 

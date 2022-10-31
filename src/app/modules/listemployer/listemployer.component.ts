@@ -7,6 +7,8 @@ import { ApiiService } from 'src/app/service/apii.service';
 import { PanelajoutComponent } from './panelajout/panelajout.component';
 import { PaneleditComponent } from 'src/app/modules/listemployer/paneledit/paneledit.component';
 
+import { getLocaleDateFormat } from '@angular/common';
+
 export interface UserData {
   id: string;
   nom: string;
@@ -56,7 +58,7 @@ export class ListemployerComponent implements AfterViewInit {
   
   {
      this.ser.deleteemploiyeur(id).subscribe(Response=>{
-      
+      alert('suprimer')
       console.log(Response)
       this.dataArray.splice(i,1)
 
@@ -91,8 +93,27 @@ export class ListemployerComponent implements AfterViewInit {
       width:'30%'
     });
   }
+tab ={
 
+  nome : '' ,
+  prenom : '' ,
+  date_de_naissance : '' ,
+  nationatily : '' ,
+  post : '' ,
+  type_contrat: ''
 
+}
+ data(_id : any ,nome : string ,prenom : string ,date_de_naissance : string ,nationatily : string ,post : string ,type_contrat: string)
+ {
+   this.tab.nome=nome 
+   this.tab.prenom=prenom 
+   this.tab.date_de_naissance=date_de_naissance
+   this.tab.nationatily=nationatily
+   this.tab.post=post
+   this.tab.type_contrat=type_contrat  
+  console.log(this.tab)
+
+ }
 
 
   ngOnInit(): void {
