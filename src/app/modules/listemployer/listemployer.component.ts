@@ -8,20 +8,7 @@ import { PanelajoutComponent } from './panelajout/panelajout.component';
 import { PaneleditComponent } from 'src/app/modules/listemployer/paneledit/paneledit.component';
 
 import { getLocaleDateFormat } from '@angular/common';
-
-export interface UserData {
-  id: string;
-  nom: string;
-  daten: string;
-  Nationalite: string;
-  dep: string;
-  type: string;
-  action:string;
-
-}
-
-
-
+import { ServerService } from 'src/app/service/server.service';
 
 @Component({
   selector: 'app-listemployer',
@@ -32,29 +19,32 @@ export interface UserData {
 
 export class ListemployerComponent implements AfterViewInit {
 
-  dataArray : any 
+
+  dataArray:any = [];
   
-  displayedColumns: string[] = ['id', 'nom', 'daten', 'Nationalite','dep','type','action'];
-  dataSource: MatTableDataSource<UserData>;
-
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
-  @ViewChild(MatSort) sort!: MatSort;
-
+  constructor(public dialog: MatDialog ,public ser:ServerService) {
+    /*this.ser.getUtilisateur().subscribe((res : any)=>{
+      this.dataArray= res;
+      console.log(this.dataArray)
+      });
+      */
+    
+    this.ser.getUtilisateur().subscribe({
+        next: (data) => {
+          this.dataArray = data;
+          console.log(data);
+        },
+        error: (e) => console.error(e)
+      
+    });
+    
+    
   
-  constructor(public dialog: MatDialog ,public ser:ApiiService) {
-    this.ser.afficher().subscribe(data=>this.dataArray=data)
-    this.dataArray = new MatTableDataSource(this.dataArray);
     
-    
-
-    // Assign the data to the data source for the table to render
-    this.dataSource = new MatTableDataSource(this.dataArray);
-
-    
-    
-
   }
-  deleteemploi(id: any ,i: number)
+  
+
+  /*deleteemploi(id: any ,i: number)
   
   {
      this.ser.deleteemploiyeur(id).subscribe(Response=>{
@@ -67,20 +57,13 @@ export class ListemployerComponent implements AfterViewInit {
 
   }
 
-
+*/
   ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+ 
+  
   }
-
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
-    }
-  }
+  
+  
   openDialog() {
 
     this.dialog.open(PanelajoutComponent, {
@@ -121,5 +104,8 @@ tab ={
   
 
 }
+
+
+
 
 

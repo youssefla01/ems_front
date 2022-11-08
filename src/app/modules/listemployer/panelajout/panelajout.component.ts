@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiiService } from 'src/app/service/apii.service';
 import { Location } from '@angular/common';
+import { ServerService } from 'src/app/service/server.service';
 @Component({
   selector: 'app-panelajout',
   templateUrl: './panelajout.component.html',
@@ -9,18 +10,19 @@ import { Location } from '@angular/common';
 })
 export class PanelajoutComponent implements OnInit {
 
-  constructor(private api:ApiiService  , private rout:Router , public _location:Location) { }
+  dataArray:any = [];
 
+  constructor(private api:ApiiService  , private rout:Router ,public ser:ServerService, public _location:Location) { 
+  
+  }
 
-
-
- 
     refresh(): void {
         this.rout.navigateByUrl("/admin", { skipLocationChange: true }).then(() => {
         console.log(decodeURI(this._location.path()));
         this.rout.navigate([decodeURI(this._location.path())]);
         });
     }
+    
 
   ngOnInit(): void {
   }

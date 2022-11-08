@@ -28,18 +28,11 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
-    
     NewdemandeComponent,
-         DemandeaccepterComponent,
-         DemanderefuserComponent,
-         UserComponent,
-         TestComponent,
-
- 
-         
-        
-         
-       
+    DemandeaccepterComponent,
+    DemanderefuserComponent,
+    UserComponent,
+    TestComponent,     
      
   ],
   imports: [
