@@ -15,4 +15,8 @@ getUtilisateur()
  {
   return this.http.get(`${this.baseUrl}`);
 }
+getId(id: any)
+{
+  return this.http.get(`${this.baseUrl}/${id}`);
+}
 }

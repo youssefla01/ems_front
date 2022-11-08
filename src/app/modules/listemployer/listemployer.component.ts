@@ -10,16 +10,6 @@ import { PaneleditComponent } from 'src/app/modules/listemployer/paneledit/panel
 import { getLocaleDateFormat } from '@angular/common';
 import { ServerService } from 'src/app/service/server.service';
 
-
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-}
-
-
-
 @Component({
   selector: 'app-listemployer',
   templateUrl: './listemployer.component.html',
@@ -27,17 +17,10 @@ export interface PeriodicElement {
 })
 
 
-export class ListemployerComponent implements OnInit {
-  
-  
+export class ListemployerComponent implements AfterViewInit {
+
 
   dataArray:any = [];
-  
-
-    
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
-  @ViewChild(MatSort) sort!: MatSort;
-
   
   constructor(public dialog: MatDialog ,public ser:ServerService) {
     /*this.ser.getUtilisateur().subscribe((res : any)=>{
@@ -45,6 +28,7 @@ export class ListemployerComponent implements OnInit {
       console.log(this.dataArray)
       });
       */
+    
     this.ser.getUtilisateur().subscribe({
         next: (data) => {
           this.dataArray = data;
@@ -75,10 +59,10 @@ export class ListemployerComponent implements OnInit {
 
 */
   ngAfterViewInit() {
+ 
   
   }
-
-
+  
   
   openDialog() {
 

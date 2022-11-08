@@ -11,9 +11,11 @@
   <thead class="thead-dark">
     <tr>
       <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Prenom</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Date de naissance</th>
+      <th scope="col">Type_contrat</th>
+      <th scope="col">   Action</th>
     </tr>
   </thead>
   <tbody>
@@ -21,8 +23,15 @@
       <th scope="row">{{ row.id_utilisateur }}</th>
       <td>{{ row.prenom }}</td>
       <td>{{ row.nom }}</td>
-      <td>@mdo</td>
+      <td>{{ row.date_de_naissance}}</td>
+      <td>{{ row.type }}</td>
+      <td>
+        <button mat-icon-button color="" (click)="openDialog()"><mat-icon>remove_red_eye</mat-icon></button>
+        <button mat-icon-button color="primary" ><mat-icon>edit</mat-icon></button>
+        <button mat-icon-button color="warn"><mat-icon>delete</mat-icon></button>
+      </td>
     </tr>
   </tbody>
 </table>
+
 
