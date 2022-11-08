@@ -7,69 +7,22 @@
         <mat-icon>person_add</mat-icon> Ajouter Employer
     </button>
 </div>
-
-<mat-form-field appearance="standard">
-  <mat-label>Filter</mat-label>
-  <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
-</mat-form-field>
-
-<div class="mat-elevation-z8">
-  <table mat-table [dataSource]="dataArray" matSort>
-
-    <!-- ID Column -->
-    <ng-container matColumnDef="id">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
-      <td mat-cell *matCellDef="let row "> {{row._id}}  </td>
-    </ng-container>
-
-    <!-- Progress Column -->
-    <ng-container matColumnDef="nom">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Nom et Prénom</th>
-      <td mat-cell *matCellDef="let row"> {{row.nome}}  {{row.prenom}} </td>
-    </ng-container>
-
-    <!-- Name Column -->
-    <ng-container matColumnDef="daten">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Date de Naissance </th>
-      <td mat-cell *matCellDef="let row"> {{row.date_de_naissance | date : "MM/dd/yy"}} </td>
-    </ng-container>
-
-    <!-- Fruit Column -->
-    <ng-container matColumnDef="Nationalite">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Nationalité </th>
-      <td mat-cell *matCellDef="let row"> {{row.nationatily}} </td>
-    </ng-container>
-
-    <!-- Fruit Column -->
-    <ng-container matColumnDef="dep">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Département </th>
-      <td mat-cell *matCellDef="let row"> {{row.post}} </td>
-    </ng-container>
-
-    <!-- Fruit Column -->
-    <ng-container matColumnDef="type">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> type contrat </th>
-      <td mat-cell *matCellDef="let row"> {{row.type_contrat}} </td>
-    </ng-container>
-
-    <!-- Fruit Column -->
-    <ng-container matColumnDef="action">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
-      <td mat-cell *matCellDef="let row ; let i = index  ">
-        <button mat-icon-button color="primary" (click)="openDialog1()"><mat-icon>edit</mat-icon></button>
-        <button mat-icon-button color="warn"  (click)="deleteemploi(row._id,i)"><mat-icon>delete</mat-icon></button>
-      </td>
-    </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-
-    <!-- Row shown when there is no matching data. -->
-    <tr class="mat-row" *matNoDataRow>
-      <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
     </tr>
-  </table>
-
-  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
-</div>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of dataArray ">
+      <th scope="row">{{ row.id_utilisateur }}</th>
+      <td>{{ row.prenom }}</td>
+      <td>{{ row.nom }}</td>
+      <td>@mdo</td>
+    </tr>
+  </tbody>
+</table>
 
