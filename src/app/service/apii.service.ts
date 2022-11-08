@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ApiiService {
   headers = new HttpHeaders().set('Content-Type', 'application/json');
-  baseUri: string = 'http://localhost:4000/';
+  baseUri: string = 'http://localhost:8081/';
   constructor(private http:HttpClient ) {}
 
 
@@ -31,7 +31,7 @@ adddemande(add_dem:any) : Observable<any> {
  }
 
 
-alldemande() :Observable<any>{ return this.http.get('http://localhost:4000/demande_all')};
+alldemande() :Observable<any>{ return this.http.get('http://localhost:8081/getAllconge')};
 
  afficheruser()
  {
@@ -41,12 +41,12 @@ alldemande() :Observable<any>{ return this.http.get('http://localhost:4000/deman
   
  demandesans_desition()
  {
-  return this.http.get('http://localhost:4000/result_demande'); 
+  return this.http.get('http://localhost:8081/getAllconge'); 
  }
  deletdemande(_id:any): Observable<any>
  {
 
-  return this.http.delete('http://localhost:4000/delet_demande/'+_id)
+  return this.http.delete('http://localhost:8081/delet_demande/'+_id)
    ;
   
   
@@ -63,70 +63,29 @@ alldemande() :Observable<any>{ return this.http.get('http://localhost:4000/deman
   return this.http.get('http://localhost:4000/result_demande_accepter');  
  }
  deleteemploiyeur(_id :any): Observable<any> {
-
-  
   return this.http.delete('http://localhost:4000/delet_emploiyeur/'+_id)
 
  }
 
 
-gettoken (){ 
+logine (user:any): Observable<any> { 
 
-  return this.http.get('http://localhost:4000/tokentest')
+  return this.http.post('http://localhost:8081/login',user)
 
 }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
- data = {
-  id:'199625',
-  nam:'redouane',
-  prenom:'aitelbacha' 
-}
-
-
-
-accer=false ;
-
-
-acceder()
+accederadmin()
  {
-    if(this.data.id=='199625')
-    {   this.accer=true ; 
-        return this.accer
-    }
-    else 
-    {
-        this.accer=false ; 
-        return this.accer 
-    }
+  return !!localStorage.getItem('token');
  }
 
 
  accederuser()
  {
-    if(this.data.id=='1996625')
-    {   this.accer=true ; 
-        return this.accer
-    }
-    else 
-    {
-        this.accer=false ; 
-        return this.accer 
-    }
+  return !!localStorage.getItem('token');
+  
  }
 
 

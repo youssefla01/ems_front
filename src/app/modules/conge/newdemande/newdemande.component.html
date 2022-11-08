@@ -9,12 +9,12 @@
                 <div class="spinner-border text-primary" role="status">
                     <span class="visually-hidden">Loading...</span>
                   </div>
-              <h5 class="card-title">{{i.id_emp}}</h5>
+              <h5 class="card-title">{{i.id_conge}}</h5>
               <p class="card-text"> demander un conger !! </p>
               </div>
             </div>
             <ul class="list-group list-group-flush">
-              <li class="list-group-item"> date debut congé :  {{i.datedebut_c | date : "MM/dd/yy"}}</li>
+              <li class="list-group-item"> date debut congé :  {{i.date_demande | date : "MM/dd/yy"}}</li>
               <li class="list-group-item"> date fin congé :  {{i.datedefin_c| date : "MM/dd/yy"}}</li>
               <li class="list-group-item">statut :   {{i.statut}}  </li>
             </ul>

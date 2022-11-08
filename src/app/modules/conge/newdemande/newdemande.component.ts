@@ -9,18 +9,25 @@ import { ApiiService } from 'src/app/service/apii.service';
 })
 export class NewdemandeComponent implements OnInit {
 
-  dataArray : any=[]
+  dataArray: any ; 
  
   constructor(private ser:ApiiService , private rout:Router) {
 
    
     this.ser.demandesans_desition().subscribe(data=>this.dataArray=data)
+    console.log(this.dataArray);
+
+    
     
    }
+
+
+
+
    deleted(id:any)
    {
      this.ser.deletdemande(id).subscribe(response=>{
-    
+      
       this.rout.navigate(['/admin/alldemande']) 
       
      

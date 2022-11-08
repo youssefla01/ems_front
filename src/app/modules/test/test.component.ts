@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiiService } from 'src/app/service/apii.service';
-
+import { FormGroup, FormBuilder, Validators } from '@angular/forms'
 @Component({
   selector: 'app-test',
   templateUrl: './test.component.html',
@@ -10,7 +10,7 @@ export class TestComponent implements OnInit {
  dataArray : any 
   constructor(private ser:ApiiService ) {
 
-    this.ser.gettoken().subscribe(data=>this.dataArray=data)
+   
     console.log(this.dataArray)
     
    }

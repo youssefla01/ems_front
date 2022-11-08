@@ -26,13 +26,16 @@ export class UserComponent implements OnInit {
     })
 
   } 
-  add(form:any)
+  logine(form:any)
   {
     try{
+
    let data=form.value ;
-   console.log(data)
-   this.api.adddemande(data).subscribe(data=>console.log(data))
-   this.rout.navigate(['/admin/newdemande']) 
+   
+   
+
+   this.api.logine(data).subscribe(data=>console.log(data))
+  
    
   }
    
