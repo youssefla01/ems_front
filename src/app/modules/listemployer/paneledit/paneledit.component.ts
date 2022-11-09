@@ -45,7 +45,7 @@ export class PaneleditComponent implements OnInit {
     try{
    let data=form.value ;
    console.log(data)
-   this.api.adddemande(data).subscribe(data=>console.log(data))
+   //this.api.adddemande(data).subscribe(data=>console.log(data))
    this.rout.navigate(['/admin/alldemande']) 
    
   }

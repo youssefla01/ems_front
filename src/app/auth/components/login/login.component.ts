@@ -35,23 +35,24 @@ export class LoginComponent implements OnInit {
 
    this.api.logine(data).subscribe(res=>{
 
-    if(res.token)
+    if(res.token && res.user)
     {
+      localStorage.clear()
       localStorage.setItem('token',res.token)
+      localStorage.setItem('user',res.user)
+      this.rout.navigate(['/user']);
+    }
+    if(res.token && res.admin) 
+    {
+      localStorage.clear()
+      localStorage.setItem('token',res.token)
+      localStorage.setItem('admin',res.admin)
       this.rout.navigate(['/admin']);
     }
-    if(res.status) 
-    {
-      localStorage.removeItem('token');
-      console.log('ici');
-    }
+
   });
 
 
-
-   //localStorage.setItem('token',this.dataArray)
-  
-   
   }
    
    catch(e)

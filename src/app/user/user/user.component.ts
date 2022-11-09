@@ -9,7 +9,8 @@ import { ApiiService } from 'src/app/service/apii.service';
 })
 export class UserComponent implements OnInit {
   dataArray : any
-  constructor(private api:ApiiService  , private rout:Router) {   this.api.afficher().subscribe(data=>this.dataArray=data) }
+  constructor(private api:ApiiService  , private rout:Router) {   //this.api.afficher().subscribe(data=>this.dataArray=data) 
+  }
 
   ngOnInit(): void {
   }

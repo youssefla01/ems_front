@@ -26,12 +26,10 @@ export class NewdemandeComponent implements OnInit {
 
    deleted(id:any)
    {
-     this.ser.deletdemande(id).subscribe(response=>{
-      
-      this.rout.navigate(['/admin/alldemande']) 
-      
-     
-    })
+        window.location.reload();
+        //  this.ser.deletdemande(id).subscribe(response=>{
+        //  this.rout.navigate(['/admin/alldemande']) 
+       //})
    }
 
   ngOnInit(): void {

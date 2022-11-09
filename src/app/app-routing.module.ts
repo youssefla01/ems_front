@@ -21,11 +21,6 @@ import { TestComponent } from './modules/test/test.component';
 const routes: Routes = [
 
 
-// test 
-{
-  path:'test',
-   component:  TestComponent
-} ,
   
   {
    
@@ -38,11 +33,11 @@ const routes: Routes = [
       
       children: [{
         path: '',
-        component: UserComponent,canActivate:[GardeGuard]
+        component: UserComponent,canActivate:[GardeuserGuard]
       } ,  
       {
         path:'contact',
-         component:  ContactComponent,canActivate:[GardeGuard]
+         component:  ContactComponent,canActivate:[GardeuserGuard]
       }
      
       

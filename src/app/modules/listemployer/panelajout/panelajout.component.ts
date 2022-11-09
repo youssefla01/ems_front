@@ -33,7 +33,7 @@ export class PanelajoutComponent implements OnInit {
     try{
    let data=form.value ;
    console.log(data)
-   this.api.addduser(data).subscribe(data=> this.rout.navigate(['/admin/posts']) )
+   //this.api.addduser(data).subscribe(data=> this.rout.navigate(['/admin/posts']) )
    alert("emploiyer est  bien ajouter ! ")
   
 

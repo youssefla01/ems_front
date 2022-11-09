@@ -30,7 +30,8 @@ export class HeaderComponent implements OnInit {
 
 
   signout(){
-    localStorage.removeItem('token');
+ 
+    localStorage.clear();
     this.route.navigate(['/login']);
     console.log('dd')
   }
