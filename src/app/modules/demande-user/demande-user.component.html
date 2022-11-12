@@ -1,0 +1,29 @@
+<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">nom</th>
+      <th scope="col">prenom</th>
+      <th scope="col">date de naissance</th>
+      <th scope="col">username</th>
+      <th scope="col">email</th>
+      <th scope="col">role</th>
+      <th scope="col">accepter</th>
+      <th scope="col">refuser</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr *ngFor="let i of dataArray">
+      <th scope="row">{{i.nom}}</th>
+      <th scope="row">{{i.prenom}}</th>
+      <th scope="row">{{i.date_de_naissance | date : "MM/dd/yy"}}</th>
+      <th scope="row">{{i.email}}</th>
+      <th scope="row">{{i.username}}</th>
+      <th scope="row">{{i.type_role}}</th>
+      <th scope="row"><button type="button" class="btn btn-success" (click)="accepter()" >accepter</button></th>
+      <th scope="row"><button type="button" class="btn btn-danger" (click)="refuser()">refuser</button></th>
+  
+    </tr>
+
+  </tbody>
+</table>
