@@ -9,11 +9,15 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule , FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { CreatuserComponent } from './components/creatuser/creatuser.component';
+import { NextcreatuserComponent } from './components/nextcreatuser/nextcreatuser.component';
 
 
 @NgModule({
   declarations: [
-    LoginComponent
+    LoginComponent,
+    CreatuserComponent,
+    NextcreatuserComponent
   ],
   imports: [
     CommonModule,

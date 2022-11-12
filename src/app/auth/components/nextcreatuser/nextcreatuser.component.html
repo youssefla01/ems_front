@@ -1,0 +1,69 @@
+
+
+
+<section class="vh-100 gradient-custom">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card bg-dark text-white" style="border-radius: 1rem;">
+          <div class="card-body p-5 text-center">
+
+            <div class="mb-md-5 mt-md-4 pb-5">
+
+              <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
+              <p class="text-white-50 mb-5">Please enter your login and password!</p>
+              <form #form="ngForm" class="form-check" (ngSubmit)="creatutilisateur(form)">
+
+
+              <div class="form-outline form-white mb-4">
+                <input type="text" class="form-control" ngModel  required  #nom="ngModel"  name="nom" placeholder="nom">
+                <label class="form-label" for="typeEmailX">nom</label>
+              </div>
+
+              <div class="form-outline form-white mb-4">
+                <input type="text" class="form-control" ngModel  required  #prenom="ngModel"  prenom="username" placeholder="prenom">
+                <label class="form-label" for="typeEmailX">prenom</label>
+              </div>
+
+
+              <div class="form-outline form-white mb-4">
+                <input type="date" class="form-control" ngModel  required  #date_de_naissane="ngModel"  name="date_de_naissane" placeholder="date_de_naissane">
+                <label class="form-label" for="typePasswordX">date de naissance </label>
+              </div>
+
+              <div class="form-group col-md-4">
+                <label for="type_contrat">Role</label>
+                <select name="Role" class="form-control"   ngModel  required  #Role="ngModel"   placeholder="Role" >
+                  <option selected *ngFor="let i of datarole">{{i.type_role}}</option>
+                </select>
+                
+              </div>
+
+              
+            
+
+
+
+              <div class="col-12">
+                <button type="submit" [disabled]="form.invalid" class="btn btn-outline-light btn-lg px-5"  >Inscrit</button>
+              </div>
+
+            </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+

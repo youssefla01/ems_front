@@ -28,18 +28,28 @@ postCongeAccepter(id_conge:any) :Observable<any>{ return this.http.get('http://l
 postCongeRefuser(id_conge:any) :Observable<any>{ return this.http.get('http://localhost:8081/postcongerefuser',id_conge)};
 
 
-//>>>>>>>>>>>>>>>>>>>><login test
+//>>>>>>>>>>>>>>>>>>>><login 
 //token 
 logine (user:any): Observable<any> { return this.http.post('http://localhost:8081/login',user)}
 //garde Admin
-
-accederadmin()  {
-
-  return !!localStorage.getItem('admin');
-}
+accederadmin()  {return !!localStorage.getItem('admin');}
 //garde User
  accederuser(){ return !!localStorage.getItem('user');}
 
+
+
+
+ //>>>>>>>>>>>>>>>>>>>>>>> User
+ //add user :  
+ Createuser (user:any): Observable<any> { return this.http.post('http://localhost:8081/createuser',user)}
+
+ //>>>>>>>>>>>>>>>>>>>>>>>>>>> utilisateur 
+ //add utilisateur 
+ addutilisateur (user:any): Observable<any> { return this.http.post('http://localhost:8081/createuser',user)}
+
+
+ //>>>>>>>>>>>>>>>>>>>>>role  
+ role() :Observable<any>{ return this.http.get('http://localhost:8081/getAllrole')};
 
 
 
