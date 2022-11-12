@@ -7,6 +7,7 @@ import { ApiiService } from 'src/app/service/apii.service';
 import { PanelajoutComponent } from './panelajout/panelajout.component';
 import { PaneleditComponent } from 'src/app/modules/listemployer/paneledit/paneledit.component';
 
+
 import { getLocaleDateFormat } from '@angular/common';
 import { ServerService } from 'src/app/service/server.service';
 
@@ -64,11 +65,12 @@ export class ListemployerComponent implements AfterViewInit {
   }
   
   
-  openDialog() {
+  openDialog(id : any) {
 
     this.dialog.open(PanelajoutComponent, {
-      width:'30%'
+      width:'70%'
     });
+    console.log(id)
   }
   openDialog1() {
 

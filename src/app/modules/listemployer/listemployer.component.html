@@ -3,7 +3,7 @@
 <mat-divider></mat-divider>
 
 <div  fxLayoutAlign="flex-end" style="margin-top:10px ;">
-    <button mat-raised-button color="primary" (click)="openDialog()">
+    <button mat-raised-button color="primary" >
         <mat-icon>person_add</mat-icon> Ajouter Employer
     </button>
 </div>
@@ -15,7 +15,8 @@
       <th scope="col">Nom</th>
       <th scope="col">Date de naissance</th>
       <th scope="col">Type_contrat</th>
-      <th scope="col">   Action</th>
+      <th scope="col">  Action</th>
+      <th scope="col">  Statut</th>
     </tr>
   </thead>
   <tbody>
@@ -23,12 +24,15 @@
       <th scope="row">{{ row.id_utilisateur }}</th>
       <td>{{ row.prenom }}</td>
       <td>{{ row.nom }}</td>
-      <td>{{ row.date_de_naissance}}</td>
+      <td>{{ row.date_de_naissance | date: 'shortDate' }}</td>
       <td>{{ row.type }}</td>
       <td>
-        <button mat-icon-button color="" (click)="openDialog()"><mat-icon>remove_red_eye</mat-icon></button>
+        <button mat-icon-button color="" (click)="openDialog(row.id_utilisateur)"><mat-icon>remove_red_eye</mat-icon></button>
         <button mat-icon-button color="primary" ><mat-icon>edit</mat-icon></button>
-        <button mat-icon-button color="warn"><mat-icon>delete</mat-icon></button>
+      </td>
+      <td>
+        <button mat-icon-button style="color : green" (click)="openDialog(row.id_utilisateur)"><mat-icon>check_circle</mat-icon></button>
+        <button mat-icon-button color="warn" >	<mat-icon>cancel</mat-icon></button>
       </td>
     </tr>
   </tbody>

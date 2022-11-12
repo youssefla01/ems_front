@@ -9,11 +9,19 @@ import { ServerService } from 'src/app/service/server.service';
   styleUrls: ['./panelajout.component.scss']
 })
 export class PanelajoutComponent implements OnInit {
-
+  id_user : any 
   dataArray:any = [];
-
-  constructor(private api:ApiiService  , private rout:Router ,public ser:ServerService, public _location:Location) { 
   
+  
+  constructor(private api:ApiiService  , private rout:Router ,public ser:ServerService, public _location:Location) { 
+    this.ser.getUtilisateur().subscribe({
+      next: (data) => {
+        this.dataArray = data;
+        console.log(data);
+      },
+      error: (e) => console.error(e)
+    
+  });
   }
 
     refresh(): void {
@@ -22,6 +30,7 @@ export class PanelajoutComponent implements OnInit {
         this.rout.navigate([decodeURI(this._location.path())]);
         });
     }
+    
     
 
   ngOnInit(): void {
