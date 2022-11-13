@@ -18,8 +18,7 @@ import { TestComponent } from './modules/test/test.component';
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { DemandeUserComponent } from './modules/demande-user/demande-user.component';
-import { EmployeAccepterComponent } from './modules/listemployer/employe-accepter/employe-accepter.component';
-import { EmployeRefuserComponent } from './modules/listemployer/employe-refuser/employe-refuser.component';
+
 
 
 
@@ -38,8 +37,7 @@ import { EmployeRefuserComponent } from './modules/listemployer/employe-refuser/
     UserComponent,
     TestComponent,
     DemandeUserComponent,
-    EmployeAccepterComponent,
-    EmployeRefuserComponent,
+  
      
      
   ],

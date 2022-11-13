@@ -24,6 +24,8 @@ import {MatNativeDateModule} from '@angular/material/core';
 import { PanelajoutComponent } from 'src/app/modules/listemployer/panelajout/panelajout.component';
 import { ContactComponent } from 'src/app/modules/contact/contact.component';
 import {FormsModule , ReactiveFormsModule} from '@angular/forms';
+import { EmployeAccepterComponent } from 'src/app/modules/listemployer/employe-accepter/employe-accepter.component';
+import { EmployeRefuserComponent } from 'src/app/modules/listemployer/employe-refuser/employe-refuser.component';
 
 
 
@@ -44,6 +46,8 @@ import {FormsModule , ReactiveFormsModule} from '@angular/forms';
     PaneleditComponent,
     PanelajoutComponent,
     ContactComponent,
+    EmployeAccepterComponent,
+    EmployeRefuserComponent
     
     
   ],
