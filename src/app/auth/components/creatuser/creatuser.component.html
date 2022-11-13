@@ -31,6 +31,34 @@
               </div>
 
 
+              <div class="form-outline form-white mb-4">
+                <input type="text" class="form-control" ngModel  required  #nom="ngModel"  name="nom" placeholder="nom">
+                <label class="form-label" for="typePasswordX">nom</label>
+              </div>
+
+              
+              <div class="form-outline form-white mb-4">
+                <input type="text" class="form-control" ngModel  required  #prenom="ngModel"  name="prenom" placeholder="prenom">
+                <label class="form-label" for="typePasswordX">prenom</label>
+              </div>
+
+
+              <div class="form-outline form-white mb-4">
+                <input type="date" class="form-control" ngModel  required  #date_de_naissance="ngModel"  name="date_de_naissance" placeholder="date_de_naissance">
+                <label class="form-label" for="typePasswordX">date_de_naissance</label>
+              </div>
+
+
+              <div class="form-group col-md-4">
+                <label for="type_contrat">Role</label>
+                <select name="id_role" class="form-control"   ngModel  required  #id_role="ngModel"   placeholder="id_role" >
+                  <option selected *ngFor="let i of datarole" value={{i.id_role}}> {{i.type_role}}</option>
+                </select>
+                
+              </div>
+
+
+
               <div class="col-12">
                 <button type="submit" [disabled]="form.invalid" class="btn btn-outline-light btn-lg px-5"  >Next</button>
               </div>

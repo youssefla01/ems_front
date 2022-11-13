@@ -31,8 +31,8 @@
         <button mat-icon-button color="primary" (click)="openDialog1()"><mat-icon>edit</mat-icon></button>
       </td>
       <td>
-        <button mat-icon-button style="color : green" (click)="openDialog(row.id_utilisateur)"><mat-icon>check_circle</mat-icon></button>
-        <button mat-icon-button color="warn" >	<mat-icon>cancel</mat-icon></button>
+        <button mat-icon-button style="color : green"  (click)="accepter(row.id_utilisateur)"><mat-icon>check_circle</mat-icon></button>
+        <button mat-icon-button color="warn"  (click)="refuser(row.id_utilisateur)">	<mat-icon>cancel</mat-icon></button>
       </td>
     </tr>
   </tbody>

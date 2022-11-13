@@ -42,7 +42,12 @@ accederadmin()  {return !!localStorage.getItem('admin');}
  //>>>>>>>>>>>>>>>>>>>>>>> User
  //add user :  
  Createuser (user:any): Observable<any> { return this.http.post('http://localhost:8081/createuser',user)}
-
+// demande user  getDemandeUser 
+getdemandeuser() :Observable<any>{ return this.http.get('http://localhost:8081/getdemandeuser')};
+//accepter
+accepteuser(id_utilisateur : any) :Observable<any>{ return this.http.get('http://localhost:8081/accepteuser/'+id_utilisateur)};
+//refuser
+refuseruser(id_utilisateur : any) :Observable<any>{ return this.http.get('http://localhost:8081/refuseruser/'+id_utilisateur)};
  //>>>>>>>>>>>>>>>>>>>>>>>>>>> utilisateur 
  //add utilisateur 
  addutilisateur (user:any): Observable<any> { return this.http.post('http://localhost:8081/createuser',user)}

@@ -14,6 +14,10 @@ export class LoginComponent implements OnInit {
   
   constructor(private api:ApiiService  , private rout:Router , private fb: FormBuilder) { }
  
+  navigationcreate (){
+
+    this.rout.navigate(['/creatuser']);
+  }
 
   ngOnInit(): void {
     localStorage.clear()
