@@ -65,5 +65,26 @@
     <label for=""></label>
   </div>
 </form>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Prenom</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Date de naissance</th>
+      <th scope="col">Type_contrat</th>
+      <th scope="col">  Action</th>
+      <th scope="col">  Statut</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of dataArray ">
+      <th scope="row">{{ row.id_utilisateur }}</th>
+      <td>{{ row.prenom }}</td>
+      <td>{{ row.nom }}</td>
+      <td>{{ row.date_de_naissance | date: 'shortDate' }}</td>
+      <td>{{ row.type }}</td>
+      <td>
+        </td></tr></tbody></table>
 
 
