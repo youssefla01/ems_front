@@ -26,6 +26,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +36,9 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     DemanderefuserComponent,
     UserComponent,
     TestComponent,
+    DemandeUserComponent,
   
+     
      
   ],
   imports: [

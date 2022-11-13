@@ -70,15 +70,16 @@ export class ListemployerComponent implements AfterViewInit {
   
   openDialog(id : any) {
 
-    this.dialog.open(PanelajoutComponent, {
-      width:'70%'
+    const dialogRef = this.dialog.open(PanelajoutComponent, {
+      width:'70%',
+      data: id 
     });
-    console.log(id)
-  }
+    
+}
   openDialog1() {
 
     this.dialog.open(PaneleditComponent, {
-      width:'30%'
+      width:'70%'
     });
   }
 tab ={

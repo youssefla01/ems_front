@@ -17,6 +17,6 @@ getUtilisateur()
 }
 getId(id: any)
 {
-  return this.http.get(`${this.baseUrl}/${id}`);
+  return this.http.get(`http://localhost:8081/getAllutilisateur/${id}`);
 }
 }

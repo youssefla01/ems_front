@@ -1,12 +1,8 @@
-<h2>Liste employer</h2>
+<h2>Liste employer REFUSER</h2>
 
 <mat-divider></mat-divider>
 
-<div  fxLayoutAlign="flex-end" style="margin-top:10px ;">
-    <button mat-raised-button color="primary" >
-        <mat-icon>person_add</mat-icon> Ajouter Employer
-    </button>
-</div>
+
 <table class="table">
   <thead class="thead-dark">
     <tr>
@@ -27,13 +23,11 @@
       <td>{{ row.date_de_naissance | date: 'shortDate' }}</td>
       <td>{{ row.type }}</td>
       <td>
-        <button mat-icon-button color="" (click)="openDialog(row.id_utilisateur)"><mat-icon>remove_red_eye</mat-icon></button>
-        <button mat-icon-button color="primary" (click)="openDialog1()"><mat-icon>edit</mat-icon></button>
+        <button mat-icon-button color="" ><mat-icon>remove_red_eye</mat-icon></button>
+        <button mat-icon-button color="primary"><mat-icon>edit</mat-icon></button>
       </td>
       <td>
         <button mat-icon-button style="color : green"  (click)="accepter(row.id_utilisateur)"><mat-icon>check_circle</mat-icon></button>
-        <button mat-icon-button color="warn"  (click)="refuser(row.id_utilisateur)">	<mat-icon>cancel</mat-icon></button>
-      </td>
     </tr>
   </tbody>
 </table>
