@@ -28,6 +28,13 @@ postCongeAccepter(id_conge:any) :Observable<any>{ return this.http.get('http://l
 postCongeRefuser(id_conge:any) :Observable<any>{ return this.http.get('http://localhost:8081/postcongerefuser/'+id_conge)};
 
 
+//>>>>>>>>>>>>>>>>>>> type contat 
+getAllcontrattype() :Observable<any>{ return this.http.get('http://localhost:8081/getAllcontrattype')};
+
+//>>>>>>>>>>>>>>>>>>>> contrat  createContrat
+
+createContrat (user:any): Observable<any> { return this.http.post('http://localhost:8081/createContrat',user)}
+
 //>>>>>>>>>>>>>>>>>>>><login 
 //token 
 logine (user:any): Observable<any> { return this.http.post('http://localhost:8081/login',user)}

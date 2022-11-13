@@ -11,13 +11,15 @@ import { ReactiveFormsModule , FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CreatuserComponent } from './components/creatuser/creatuser.component';
 import { NextcreatuserComponent } from './components/nextcreatuser/nextcreatuser.component';
+import { ContratUserComponent } from './components/contrat-user/contrat-user.component';
 
 
 @NgModule({
   declarations: [
     LoginComponent,
     CreatuserComponent,
-    NextcreatuserComponent
+    NextcreatuserComponent,
+    ContratUserComponent
   ],
   imports: [
     CommonModule,
