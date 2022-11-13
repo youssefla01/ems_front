@@ -40,10 +40,9 @@ export class CreatuserComponent implements OnInit {
    this.api.Createuser(data).subscribe(
     (data) => {
       this.id_user = {
-        state :
-        { 
-          data : data 
-        }  
+       
+         data 
+      
       }
       console.log(this.id_user);
       this.rout.navigate(['contratuser'],this.id_user);

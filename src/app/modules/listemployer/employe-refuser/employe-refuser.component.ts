@@ -14,7 +14,7 @@ export class EmployeRefuserComponent implements OnInit {
   
   constructor(public dialog: MatDialog ,public ser:ApiiService) {
     
-    this.ser.getdemandeuser().subscribe({
+    this.ser.getuserrefuser().subscribe({
         next: (data) => {
           this.dataArray = data;
           console.log(data);
@@ -27,20 +27,12 @@ export class EmployeRefuserComponent implements OnInit {
   
     
   }
-  accepter(id_utilisateur : any)
-  {
-    this.ser.accepteuser(id_utilisateur).subscribe(
-     
-     
-      send=>console.log(send) )
-      window.location.reload();
 
-  }
     
     refuser(id_utilisateur : any)
   {
 
-    this.ser.refuseruser(id_utilisateur).subscribe(
+    this.ser.accepteuser(id_utilisateur).subscribe(
      
      
       send=>console.log(send) )

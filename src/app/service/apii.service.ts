@@ -55,6 +55,13 @@ getdemandeuser() :Observable<any>{ return this.http.get('http://localhost:8081/g
 accepteuser(id_utilisateur : any) :Observable<any>{ return this.http.get('http://localhost:8081/accepteuser/'+id_utilisateur)};
 //refuser
 refuseruser(id_utilisateur : any) :Observable<any>{ return this.http.get('http://localhost:8081/refuseruser/'+id_utilisateur)};
+
+//get demande accepter 
+getuseraccepte() :Observable<any>{ return this.http.get('http://localhost:8081/getuseraccepte')};
+//get demande refuser
+getuserrefuser() :Observable<any>{ return this.http.get('http://localhost:8081/getuserrefuser')};
+
+
  //>>>>>>>>>>>>>>>>>>>>>>>>>>> utilisateur 
  //add utilisateur 
  addutilisateur (user:any): Observable<any> { return this.http.post('http://localhost:8081/createuser',user)}

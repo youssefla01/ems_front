@@ -15,7 +15,7 @@ export class EmployeAccepterComponent implements AfterViewInit{
   
   constructor(public dialog: MatDialog ,public ser:ApiiService) {
     
-    this.ser.getdemandeuser().subscribe({
+    this.ser.getuseraccepte().subscribe({
         next: (data) => {
           this.dataArray = data;
           console.log(data);

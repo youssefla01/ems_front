@@ -14,7 +14,7 @@ import { GardeuserGuard } from './gardeutilisateur/gardeuser.guard';
 
 import { ContactComponent } from 'src/app/modules/contact/contact.component';
 import { TestComponent } from './modules/test/test.component';
-import { DemandeUserComponent } from './modules/demande-user/demande-user.component';
+
 import { EmployeAccepterComponent } from './modules/listemployer/employe-accepter/employe-accepter.component';
 import { EmployeRefuserComponent } from './modules/listemployer/employe-refuser/employe-refuser.component';
 

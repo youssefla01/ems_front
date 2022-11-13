@@ -36,11 +36,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     DemanderefuserComponent,
     UserComponent,
     TestComponent,
-    DemandeUserComponent,
-  
-     
-     
-  ],
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,

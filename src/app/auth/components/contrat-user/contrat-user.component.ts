@@ -11,9 +11,11 @@ import { ApiiService } from 'src/app/service/apii.service';
 export class ContratUserComponent implements OnInit {
 
 test : any ;
-  constructor(private api:ApiiService , private router : ActivatedRoute , private rout:Router , private fb: FormBuilder) {
+  constructor(private api:ApiiService , private router : ActivatedRoute , private rout:Router , private fb: FormBuilder)
+   {
 
-    //  DOM this.test=this.rout.getCurrentNavigation()?.extras.state.data; 
+    this.test=this.rout.getCurrentNavigation()?.extras; 
+    
 
    }
 
@@ -38,7 +40,7 @@ test : any ;
     try{
 
   let data=form.value ;
-  let user ={id_utilisateur : 22}
+  let user ={id_utilisateur : this.test.data.insertId }
   var obj = Object.assign(data, user);
   console.log(obj)
    this.api.createContrat(obj).subscribe(
@@ -48,7 +50,7 @@ test : any ;
     
     
     );
-  //  this.rout.navigate(['nextcreatuser']);
+  this.rout.navigate(['nextcreatuser']);
 
 
   }
