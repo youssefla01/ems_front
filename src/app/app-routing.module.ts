@@ -14,7 +14,7 @@ import { GardeuserGuard } from './gardeutilisateur/gardeuser.guard';
 
 import { ContactComponent } from 'src/app/modules/contact/contact.component';
 import { TestComponent } from './modules/test/test.component';
-import { DemandeUserComponent } from './modules/demande-user/demande-user.component';
+
 
 
 
@@ -77,10 +77,7 @@ const routes: Routes = [
     path:'demanderefuser',
      component:  DemanderefuserComponent,canActivate:[GardeGuard]
   },
-  {
-    path:'demande_user',
-    component: DemandeUserComponent ,canActivate:[GardeGuard]
- }
+
 
  
  

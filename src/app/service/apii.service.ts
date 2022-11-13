@@ -23,9 +23,9 @@ CongeRefuser() :Observable<any>{ return this.http.get('http://localhost:8081/get
 //historiqueconge
 Congehistorique() :Observable<any>{ return this.http.get('http://localhost:8081/getCongeRefuser')};
 //Post conge refuser 
-postCongeAccepter(id_conge:any) :Observable<any>{ return this.http.get('http://localhost:8081/postcongeaccepter',id_conge)};
+postCongeAccepter(id_conge:any) :Observable<any>{ return this.http.get('http://localhost:8081/postcongeaccepter/'+id_conge)};
 // post conge accepter 
-postCongeRefuser(id_conge:any) :Observable<any>{ return this.http.get('http://localhost:8081/postcongerefuser',id_conge)};
+postCongeRefuser(id_conge:any) :Observable<any>{ return this.http.get('http://localhost:8081/postcongerefuser/'+id_conge)};
 
 
 //>>>>>>>>>>>>>>>>>>>><login 
