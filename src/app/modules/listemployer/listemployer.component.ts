@@ -23,14 +23,9 @@ export class ListemployerComponent implements AfterViewInit {
 
   dataArray:any = [];
   
-  constructor(public dialog: MatDialog ,public ser:ServerService) {
-    /*this.ser.getUtilisateur().subscribe((res : any)=>{
-      this.dataArray= res;
-      console.log(this.dataArray)
-      });
-      */
+  constructor(public dialog: MatDialog ,public ser:ApiiService) {
     
-    this.ser.getUtilisateur().subscribe({
+    this.ser.getdemandeuser().subscribe({
         next: (data) => {
           this.dataArray = data;
           console.log(data);
@@ -43,22 +38,30 @@ export class ListemployerComponent implements AfterViewInit {
   
     
   }
-  
 
-  /*deleteemploi(id: any ,i: number)
-  
+  accepter(id_utilisateur : any)
   {
-     this.ser.deleteemploiyeur(id).subscribe(Response=>{
-      alert('suprimer')
-      console.log(Response)
-      this.dataArray.splice(i,1)
-
-    
-    })
+    this.ser.accepteuser(id_utilisateur).subscribe(
+     
+     
+      send=>console.log(send) )
+      window.location.reload();
 
   }
+    
+    refuser(id_utilisateur : any)
+  {
 
-*/
+    this.ser.refuseruser(id_utilisateur).subscribe(
+     
+     
+      send=>console.log(send) )
+      window.location.reload();
+
+  }
+  
+
+
   ngAfterViewInit() {
  
   
