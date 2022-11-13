@@ -17,13 +17,27 @@ export class DemandeUserComponent implements OnInit {
    
     
    }
-   refuser()
-   {
-
-   }
-   accepter()
+   refuser(id_utilisateur : any)
    {
     
+    this.ser.refuseruser(id_utilisateur).subscribe(
+     
+     
+      send=>console.log(send) )
+      window.location.reload();
+
+
+   }
+
+
+   accepter(id_utilisateur : any)
+   {
+      
+    this.ser.accepteuser(id_utilisateur).subscribe(
+     
+     
+      send=>console.log(send) )
+      window.location.reload();
    }
 
   ngOnInit(): void {

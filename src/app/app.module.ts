@@ -17,6 +17,7 @@ import { UserComponent } from './user/user/user.component';
 import { TestComponent } from './modules/test/test.component';
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { DemandeUserComponent } from './modules/demande-user/demande-user.component';
 
 
 
@@ -32,7 +33,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     DemandeaccepterComponent,
     DemanderefuserComponent,
     UserComponent,
-    TestComponent,     
+    TestComponent,
+    DemandeUserComponent,     
      
   ],
   imports: [

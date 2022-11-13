@@ -20,8 +20,8 @@
       <th scope="row">{{i.email}}</th>
       <th scope="row">{{i.username}}</th>
       <th scope="row">{{i.type_role}}</th>
-      <th scope="row"><button type="button" class="btn btn-success" (click)="accepter()" >accepter</button></th>
-      <th scope="row"><button type="button" class="btn btn-danger" (click)="refuser()">refuser</button></th>
+      <th scope="row"><button type="button" class="btn btn-success" (click)="accepter(i.id_utilisateur)" >accepter</button></th>
+      <th scope="row"><button type="button" class="btn btn-danger" (click)="refuser(i.id_utilisateur)">refuser</button></th>
   
     </tr>
 
