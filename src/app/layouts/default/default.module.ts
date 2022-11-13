@@ -26,6 +26,7 @@ import { ContactComponent } from 'src/app/modules/contact/contact.component';
 import {FormsModule , ReactiveFormsModule} from '@angular/forms';
 import { EmployeAccepterComponent } from 'src/app/modules/listemployer/employe-accepter/employe-accepter.component';
 import { EmployeRefuserComponent } from 'src/app/modules/listemployer/employe-refuser/employe-refuser.component';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 
 
@@ -70,6 +71,7 @@ import { EmployeRefuserComponent } from 'src/app/modules/listemployer/employe-re
     MatDatepickerModule,
     MatNativeDateModule,
     FormsModule,
+    MatExpansionModule
     
    
 

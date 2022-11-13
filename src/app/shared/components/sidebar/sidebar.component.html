@@ -14,25 +14,33 @@
     <mat-menu #menu1="matMenu">
        
       </mat-menu>-->
+    <mat-accordion>
+        <mat-expansion-panel (opened)="panelOpenState = true"
+                             (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+                <mat-icon>note_add</mat-icon>Liste Employe
+          </mat-expansion-panel-header>
+          <a mat-list-item routerLinkActive="list-item-active" routerLink="/admin/listemployer"><mat-icon>done_outline</mat-icon>Neaveau Employe </a>
+          <a mat-list-item routerLinkActive="list-item-active" routerLink="/admin/employeAccepter"><mat-icon>done_outline</mat-icon>Employe accepter </a>
+          <a mat-list-item routerLinkActive="list-item-active" routerLink="/admin/employeRefuser"><mat-icon>thumb_down</mat-icon>Employe refuser </a>
+        </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+        <mat-expansion-panel (opened)="panelOpenState = true"
+                             (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+                <mat-icon>list</mat-icon>Liste Demande Congé
+          </mat-expansion-panel-header>
+          <a mat-list-item routerLinkActive="list-item-active"  routerLink="/admin/newdemande"><mat-icon>note_add</mat-icon> Nouveau Demande</a>
+          <a mat-list-item routerLinkActive="list-item-active"  routerLink="/admin/demandeaccepter"><mat-icon>done_outline</mat-icon> Demandes Accepter</a>
+          <a mat-list-item routerLinkActive="list-item-active"  routerLink="/admin/demanderefuser"><mat-icon>thumb_down</mat-icon> Demandes Refuser</a>
+        </mat-expansion-panel>
+    </mat-accordion>
    
-    <a mat-menu-item routerLinkActive="list-item-active" routerLink="/admin/listemployer"><mat-icon>note_add</mat-icon> Nouveau Employe</a>
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/admin/employeAccepter"><mat-icon>done_outline</mat-icon>Employe accepter </a>
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/admin/employeRefuser"><mat-icon>thumb_down</mat-icon>Employe refuser </a>
-    
-    
-    <a mat-list-item routerLinkActive="list-item-active" [matMenuTriggerFor]="menu" routerLink="/newdemande"><mat-icon>list</mat-icon> Demandes de congé</a>
-    <mat-menu #menu="matMenu">
-        <a mat-menu-item routerLinkActive="list-item-active"  routerLink="/admin/newdemande"><mat-icon>note_add</mat-icon> Nouveau Demande</a>
-        <a mat-menu-item routerLinkActive="list-item-active"  routerLink="/admin/demandeaccepter"><mat-icon>done_outline</mat-icon> Demandes Accepter</a>
-        <a mat-menu-item routerLinkActive="list-item-active"  routerLink="/admin/demanderefuser"><mat-icon>thumb_down</mat-icon> Demandes Refuser</a>
-        
-      </mat-menu>
       <h2 matSubheader>Utilisateur :</h2>
       <a mat-list-item routerLinkActive="list-item-active" routerLink="/demande"><mat-icon>launch</mat-icon>Demander un congé </a>
       <a mat-list-item routerLinkActive="list-item-active" routerLink="/user"><mat-icon>book</mat-icon> Mes Demandes</a>
     <a mat-list-item routerLinkActive="list-item-active" routerLink="/admin/posts">Historique Demande</a>
-    
-   
     
 
     <mat-divider></mat-divider>
@@ -46,3 +54,5 @@
 
     <a mat-list-item routerLinkActive="list-item-active" routerLink="/admin/test">Test</a>
 </mat-nav-list>
+
+
