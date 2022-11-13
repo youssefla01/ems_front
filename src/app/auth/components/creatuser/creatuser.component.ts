@@ -11,8 +11,18 @@ import { ApiiService } from 'src/app/service/apii.service';
 export class CreatuserComponent implements OnInit {
 
   constructor(private api:ApiiService  , private rout:Router , private fb: FormBuilder) { }
-
+  datarole : any 
   ngOnInit(): void {
+
+    
+    this.api.role().subscribe({
+      next: (data) => {
+        this.datarole = data;
+        console.log(data);
+      },
+      error: (e) => console.error(e)
+    
+  });
   }
 
   creatuser(form:any)
