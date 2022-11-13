@@ -1,46 +1,38 @@
 <h1 mat-dialog-title>Ajouter Employe Form</h1>
-<form #form="ngForm" class="row g-3" (ngSubmit)="addemploi(form)">
+<form #form="ngForm"  class="row g-3" (ngSubmit)="addemploi(form)" *ngFor="let row of dataArray ">
   <div class="col-md-6">
-    <label for="inputEmail4" class="form-label" >cin</label>
-    <input type="text" class="form-control" ngModel  required  #cin="ngModel"  name="cin" placeholder="cin">
-    <div class="alert-danger"  *ngIf="cin.touched && cin.invalid"> remplissage de votre id est obligatoir !</div>
-    
-  </div>
-  <div class="col-md-6">
-    <label for="inputEmail4" class="form-label" >nome</label>
-    <input type="text" class="form-control" ngModel  required  #nome="ngModel"  name="nome" placeholder="nome">
+    <label for="inputEmail4" class="form-label" >nom</label>
+    <input type="text" class="form-control" required  #nome="ngModel"  name="nome" placeholder="nom" ngModel="{{ row.nom }}" disabled>
     <div class="alert-danger"  *ngIf="nome.touched && nome.invalid"> remplissage de votre id est obligatoir !</div>
     
   </div>
   <div class="col-md-6">
     <label for="inputEmail4" class="form-label" >prenom</label>
-    <input type="text" class="form-control" ngModel  required  #prenom="ngModel"  name="prenom" placeholder="prenom">
+    <input type="text" class="form-control" ngModel  required  #prenom="ngModel"  name="prenom" placeholder="prenom" ngModel="{{ row.prenom }}" disabled>
     <div class="alert-danger"  *ngIf="prenom.touched && prenom.invalid"> remplissage de votre id est obligatoir !</div>
     
   </div>
-
-
   <div class="col-md-6">
-    <label for="inputPassword4" class="form-label"   >date_de_naissance     :</label> 
-    <input type="date"  ngModel #date_de_naissance="ngModel" required name="date_de_naissance" placeholder="date_de_naissance">
-    <div class="alert-danger" *ngIf="date_de_naissance.touched  && date_de_naissance.invalid "> remplissage de votre date debut est obligatoir !</div>
-    
-  </div>
-  <div class="col-md-6">
-    <label for="inputEmail4" class="form-label" >nationatily</label>
-    <input type="text" class="form-control" ngModel  required  #nationatily="ngModel"  name="nationatily" placeholder="nationatily">
+    <label for="inputEmail4" class="form-label" >Email</label>
+    <input type="email" class="form-control" ngModel  required  #nationatily="ngModel"  name="email" ngModel="{{ row.email }}" disabled>
     <div class="alert-danger"  *ngIf="nationatily.touched && nationatily.invalid"> remplissage de votre id est obligatoir !</div>
     
   </div> <div class="col-md-6">
-    <label for="inputEmail4" class="form-label" >Departement </label>
-    <input type="text" class="form-control" ngModel  required  #Departement="ngModel"  name="Departement" placeholder="Departement">
+    <label for="inputEmail4" class="form-label" >username </label>
+    <input type="text" class="form-control" ngModel  required  #Departement="ngModel"  name="Departement"  ngModel="{{ row.username }}" disabled>
     <div class="alert-danger"  *ngIf="Departement.touched && Departement.invalid"> remplissage de votre id est obligatoir !</div>
     
   </div> 
+  <div class="col-md-6">
+    <label for="inputPassword4" class="form-label"   >date_de_naissance     :</label> 
+    <input type="date" class="form-control" ngModel #date_de_naissance="ngModel" required name="date_de_naissance" placeholder="date_de_naissance" ngModel="{{ row.date_de_naissance }}" disabled>
+    <div class="alert-danger" *ngIf="date_de_naissance.touched  && date_de_naissance.invalid "> remplissage de votre date debut est obligatoir !</div>
+    
+  </div>
 
-  <div class="form-group col-md-4">
+  <div class="col-md-6">
     <label for="type_contrat">type_contrat</label>
-    <select name="type_contrat" class="form-control"   ngModel  required  #type_contrat="ngModel"   placeholder="type_contrat" >
+    <select name="type_contrat" class="form-control"   ngModel  required  #type_contrat="ngModel"   placeholder="type_contrat" ngModel="{{ row.type }}" disabled>
       <option selected>CDD</option>
       <option selected>CDI</option>
       <option selected>ALTERNANCE</option>
@@ -49,14 +41,14 @@
     <div class="alert-danger"  *ngIf="type_contrat.touched && type_contrat.invalid"> remplissage de votre id est obligatoir !</div>
   </div>
   
-  <div class="col-12">
-      <label for="inputAddress" class="form-label"  >debutcontrat       :</label>
-      <input type="date" ngModel #debutcontrat="ngModel" required  name="debutcontrat" placeholder="debutcontrat">
+  <div class="col-6">
+      <label for="inputAddress" class="form-label"  >Date Début      :</label>
+      <input type="date" class="form-control" ngModel #debutcontrat="ngModel" required  name="debutcontrat" placeholder="debutcontrat" ngModel="{{ row.date_debut }}" disabled>
       <div class="alert-danger" *ngIf="debutcontrat.touched  && debutcontrat.invalid "> remplissage de votre date fin  est obligatoir !</div>
     </div>
-    <div class="col-12">
-      <label for="inputAddress" class="form-label"  >fincontrat       :</label>
-      <input type="date" ngModel #fincontrat="ngModel" required  name="fincontrat" placeholder="fincontrat">
+    <div class="col-6">
+      <label for="inputAddress" class="form-label"  >Date fin      :</label>
+      <input type="date" class="form-control" ngModel #fincontrat="ngModel" required  name="fincontrat" placeholder="fincontrat" ngModel="{{ row.date_fin}}" disabled>
       <div class="alert-danger" *ngIf="fincontrat.touched  && fincontrat.invalid "> remplissage de votre date fin  est obligatoir !</div>
     </div>
   <div class="col-12">
@@ -65,26 +57,3 @@
     <label for=""></label>
   </div>
 </form>
-<table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Prenom</th>
-      <th scope="col">Nom</th>
-      <th scope="col">Date de naissance</th>
-      <th scope="col">Type_contrat</th>
-      <th scope="col">  Action</th>
-      <th scope="col">  Statut</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let row of dataArray ">
-      <th scope="row">{{ row.id_utilisateur }}</th>
-      <td>{{ row.prenom }}</td>
-      <td>{{ row.nom }}</td>
-      <td>{{ row.date_de_naissance | date: 'shortDate' }}</td>
-      <td>{{ row.type }}</td>
-      <td>
-        </td></tr></tbody></table>
-
-

@@ -76,7 +76,7 @@ export class ListemployerComponent implements AfterViewInit {
   openDialog1() {
 
     this.dialog.open(PaneleditComponent, {
-      width:'30%'
+      width:'70%'
     });
   }
 tab ={
