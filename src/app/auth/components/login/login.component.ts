@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
 
   dataArray :any ;
 
-  logine(form:any)
+  login(form:any)
   {
     try{
 

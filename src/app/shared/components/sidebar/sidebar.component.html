@@ -10,7 +10,16 @@
 
     <h2 matSubheader>ADMIN :</h2>
     <a mat-list-item routerLinkActive="list-item-active" routerLink="/admin"><mat-icon>home</mat-icon> Dashboard</a>
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/admin/listemployer"><mat-icon>supervisor_account</mat-icon> Liste employer</a>
+    <!--<a mat-list-item routerLinkActive="list-item-active" [matMenuTriggerFor]="menu1"><mat-icon>supervisor_account</mat-icon> Liste employer</a>
+    <mat-menu #menu1="matMenu">
+       
+      </mat-menu>-->
+   
+    <a mat-menu-item routerLinkActive="list-item-active" routerLink="/admin/listemployer"><mat-icon>note_add</mat-icon> Nouveau Employe</a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/admin/employeAccepter"><mat-icon>done_outline</mat-icon>Employe accepter </a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/admin/employeRefuser"><mat-icon>thumb_down</mat-icon>Employe refuser </a>
+    
+    
     <a mat-list-item routerLinkActive="list-item-active" [matMenuTriggerFor]="menu" routerLink="/newdemande"><mat-icon>list</mat-icon> Demandes de congé</a>
     <mat-menu #menu="matMenu">
         <a mat-menu-item routerLinkActive="list-item-active"  routerLink="/admin/newdemande"><mat-icon>note_add</mat-icon> Nouveau Demande</a>

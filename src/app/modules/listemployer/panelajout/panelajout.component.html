@@ -1,4 +1,4 @@
-<h1 mat-dialog-title>Ajouter Employe Form</h1>
+<h1 mat-dialog-title>Information de l'employe</h1>
 <form #form="ngForm"  class="row g-3" (ngSubmit)="addemploi(form)" *ngFor="let row of dataArray ">
   <div class="col-md-6">
     <label for="inputEmail4" class="form-label" >nom</label>
@@ -25,7 +25,7 @@
   </div> 
   <div class="col-md-6">
     <label for="inputPassword4" class="form-label"   >date_de_naissance     :</label> 
-    <input type="date" class="form-control" ngModel #date_de_naissance="ngModel" required name="date_de_naissance" placeholder="date_de_naissance" ngModel="{{ row.date_de_naissance }}" disabled>
+    <input type="text" class="form-control" ngModel #date_de_naissance="ngModel" required name="date_de_naissance" placeholder="date_de_naissance" ngModel="{{ row.date_de_naissance }}" disabled>
     <div class="alert-danger" *ngIf="date_de_naissance.touched  && date_de_naissance.invalid "> remplissage de votre date debut est obligatoir !</div>
     
   </div>
@@ -43,12 +43,12 @@
   
   <div class="col-6">
       <label for="inputAddress" class="form-label"  >Date Début      :</label>
-      <input type="date" class="form-control" ngModel #debutcontrat="ngModel" required  name="debutcontrat" placeholder="debutcontrat" ngModel="{{ row.date_debut }}" disabled>
+      <input type="text" class="form-control" ngModel #debutcontrat="ngModel" required  name="debutcontrat" placeholder="debutcontrat" ngModel="{{ row.date_debut | date: 'shortDate'  }}" disabled>
       <div class="alert-danger" *ngIf="debutcontrat.touched  && debutcontrat.invalid "> remplissage de votre date fin  est obligatoir !</div>
     </div>
     <div class="col-6">
       <label for="inputAddress" class="form-label"  >Date fin      :</label>
-      <input type="date" class="form-control" ngModel #fincontrat="ngModel" required  name="fincontrat" placeholder="fincontrat" ngModel="{{ row.date_fin}}" disabled>
+      <input type="text" class="form-control" ngModel #fincontrat="ngModel" required  name="fincontrat" placeholder="fincontrat" ngModel="{{ row.date_fin}}" disabled>
       <div class="alert-danger" *ngIf="fincontrat.touched  && fincontrat.invalid "> remplissage de votre date fin  est obligatoir !</div>
     </div>
   <div class="col-12">
