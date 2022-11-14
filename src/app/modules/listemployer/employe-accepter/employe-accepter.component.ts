@@ -56,5 +56,12 @@ export class EmployeAccepterComponent implements AfterViewInit{
 
   ngOnInit(): void {
   }
+  openDialog1(id : any) {
+
+    const dialogRef = this.dialog.open(PaneleditComponent, {
+      width:'70%',
+      data: id 
+    });
+  }
 
 }

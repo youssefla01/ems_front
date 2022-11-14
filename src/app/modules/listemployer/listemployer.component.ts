@@ -76,10 +76,11 @@ export class ListemployerComponent implements AfterViewInit {
     });
     
 }
-  openDialog1() {
+  openDialog1(id : any) {
 
-    this.dialog.open(PaneleditComponent, {
-      width:'70%'
+    const dialogRef = this.dialog.open(PaneleditComponent, {
+      width:'70%',
+      data: id 
     });
   }
 tab ={

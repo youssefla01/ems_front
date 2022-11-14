@@ -1,5 +1,5 @@
 <h1 mat-dialog-title>Information de l'employe</h1>
-<form #form="ngForm"  class="row g-3" (ngSubmit)="addemploi(form)" *ngFor="let row of dataArray ">
+<form #form="ngForm"  class="row g-3" *ngFor="let row of dataArray ">
   <div class="col-md-6">
     <label for="inputEmail4" class="form-label" >nom</label>
     <input type="text" class="form-control" required  #nome="ngModel"  name="nome" placeholder="nom" ngModel="{{ row.nom }}" disabled>
@@ -53,7 +53,7 @@
     </div>
   <div class="col-12">
     <button mat-raised-button color="warn" mat-dialog-close>Fermer</button>
-    <button style="margin-left:8px" mat-raised-button color="primary"  [disabled]="form.invalid"    >Ajouter</button>
+    <button style="margin-left:8px" mat-raised-button color="primary" (click)="onPrint()"  [disabled]="form.invalid">Imprimer</button>
     <label for=""></label>
   </div>
 </form>

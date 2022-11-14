@@ -44,26 +44,13 @@ export class PanelajoutComponent implements OnInit {
   }
 
 
-  addemploi(form:any)
-  {
-    try{
-   let data=form.value ;
-   console.log(data)
-   //this.api.addduser(data).subscribe(data=> this.rout.navigate(['/admin/posts']) )
-   alert("emploiyer est  bien ajouter ! ")
+  onPrint(){
+    window.print();
+}
+   
+   
   
-
-   
-  }
-   
-   catch(e)
-   {
-    console.log("errur est :  "+e)
-   
-
-   }
   
-  }
 
  
 }

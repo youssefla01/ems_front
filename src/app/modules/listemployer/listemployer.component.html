@@ -24,7 +24,7 @@
       <td>{{ row.type }}</td>
       <td>
         <button mat-icon-button color="" (click)="openDialog(row.id_utilisateur)"><mat-icon>remove_red_eye</mat-icon></button>
-        <button mat-icon-button color="primary" (click)="openDialog1()"><mat-icon>edit</mat-icon></button>
+        <button mat-icon-button color="primary" (click)="openDialog1(row.id_utilisateur)"><mat-icon>edit</mat-icon></button>
       </td>
       <td>
         <button mat-icon-button style="color : green"  (click)="accepter(row.id_utilisateur)"><mat-icon>check_circle</mat-icon></button>

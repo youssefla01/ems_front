@@ -19,4 +19,8 @@ getId(id: any)
 {
   return this.http.get(`http://localhost:8081/getAllutilisateur/${id}`);
 }
+updateUtil(id: any, data :any)
+{
+  return this.http.get(`http://localhost:8081/updateUtilisateur/${id}`, data);
+}
 }
