@@ -39,9 +39,11 @@ test : any ;
   {
     try{
 
-  let data=form.value ;
-  let user ={id_utilisateur : this.test.data.insertId }
-  var obj = Object.assign(data, user);
+  let data=form.value ; // objet 1 
+  let user ={id_utilisateur : this.test.data.insertId } // objet 2 
+
+
+  var obj = Object.assign(data, user); //  objet 1+2  pour lenvoiyer 
   console.log(obj)
    this.api.createContrat(obj).subscribe(
     
