@@ -1,70 +1,59 @@
-<h1 mat-dialog-title>Edit Employe Form</h1>
-<form #form="" class="row g-3" (ngSubmit)="add(form)">
-<div mat-dialog-content>
-    <mat-form-field appearance="outline">
-        <mat-label>Nom</mat-label>
-        <input matInput placeholder="Nom">
+<h1 mat-dialog-title>Information de l'employe</h1>
+<form #form="ngForm"  class="row g-3"  *ngFor="let row of dataArray ">
+  <div class="col-md-6">
+    <label for="inputEmail4" class="form-label" >nom</label>
+    <input type="text" class="form-control" required  #nome="ngModel"  name="nome" placeholder="nom" ngModel="{{ row.nom }}">
+    <div class="alert-danger"  *ngIf="nome.touched && nome.invalid"> remplissage de votre id est obligatoir !</div>
     
-      </mat-form-field>
+  </div>
+  <div class="col-md-6">
+    <label for="inputEmail4" class="form-label" >prenom</label>
+    <input type="text" class="form-control" ngModel  required  #prenom="ngModel"  name="prenom" placeholder="prenom" ngModel="{{ row.prenom }}">
+    <div class="alert-danger"  *ngIf="prenom.touched && prenom.invalid"> remplissage de votre id est obligatoir !</div>
+    
+  </div>
+  <div class="col-md-6">
+    <label for="inputEmail4" class="form-label" >Email</label>
+    <input type="email" class="form-control" ngModel  required  #nationatily="ngModel"  name="email" ngModel="{{ row.email }}">
+    <div class="alert-danger"  *ngIf="nationatily.touched && nationatily.invalid"> remplissage de votre id est obligatoir !</div>
+    
+  </div> <div class="col-md-6">
+    <label for="inputEmail4" class="form-label" >username </label>
+    <input type="text" class="form-control" ngModel  required  #Departement="ngModel"  name="Departement"  ngModel="{{ row.username }}">
+    <div class="alert-danger"  *ngIf="Departement.touched && Departement.invalid"> remplissage de votre id est obligatoir !</div>
+    
+  </div> 
+  <div class="col-md-6">
+    <label for="inputPassword4" class="form-label"   >date_de_naissance     :</label> 
+    <input type="text" class="form-control" ngModel #date_de_naissance="ngModel" required name="date_de_naissance" placeholder="date_de_naissance" ngModel="{{ row.date_de_naissance |date: 'dd/MM/yyyy' }}">
+    <div class="alert-danger" *ngIf="date_de_naissance.touched  && date_de_naissance.invalid "> remplissage de votre date debut est obligatoir !</div>
+    
+  </div>
 
-      <mat-form-field appearance="outline">
-        <mat-label>Prénom</mat-label>
-        <input matInput placeholder="Prénom">
-      </mat-form-field>
-
-      <mat-form-field appearance="fill">
-        <mat-label>Date de naissance</mat-label>
-        <input matInput [matDatepicker]="picker">
-        <mat-hint>MM/DD/YYYY</mat-hint>
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-       
-      </mat-form-field>
-
-
-     <mat-form-field appearance="outline">
-        <mat-label>Nationalite</mat-label>
-        <input matInput placeholder="nationalité">
-      </mat-form-field>
-
-      <mat-form-field appearance="outline">
-        <mat-label>departement</mat-label>
-        <mat-select>
-            <mat-option value="one">Informatique</mat-option>
-            <mat-option value="two">business</mat-option>
-            <mat-option value="tree">santé</mat-option>
-          </mat-select>
-      </mat-form-field>
-
-      <mat-form-field appearance="fill">
-        <mat-label>Type contrat :</mat-label>
-        <mat-select>
-          <mat-option value="one">CDI</mat-option>
-          <mat-option value="two">CDD</mat-option>
-          <mat-option value="tree">Alternance</mat-option>
-        </mat-select>
-     </mat-form-field>
-
-     <mat-form-field appearance="fill">
-        <mat-label>Date début </mat-label>
-        <input matInput [matDatepicker]="picke">
-        <mat-hint>MM/DD/YYYY</mat-hint>
-        <mat-datepicker-toggle matSuffix [for]="picke"></mat-datepicker-toggle>
-        <mat-datepicker #picke></mat-datepicker>
-       
-      </mat-form-field>
-
-      <mat-form-field appearance="fill">
-        <mat-label>Date fin</mat-label>
-        <input matInput [matDatepicker]="pick">
-        <mat-hint>MM/DD/YYYY</mat-hint>
-        <mat-datepicker-toggle matSuffix [for]="pick"></mat-datepicker-toggle>
-        <mat-datepicker #pick></mat-datepicker>
-       
-      </mat-form-field>
-</div>
-<div mat-dialogue-action  [align]="'end'" >
-<button mat-raised-button color="warn" mat-dialog-close>Fermer</button>
-<button style="margin-left:8px" mat-raised-button color="primary">Ajouter</button>
-</div>
+  <div class="col-md-6">
+    <label for="type_contrat">type_contrat</label>
+    <select name="type_contrat" class="form-control"   ngModel  required  #type_contrat="ngModel"   placeholder="type_contrat" ngModel="{{ row.type }}">
+      <option selected>CDD</option>
+      <option selected>CDI</option>
+      <option selected>ALTERNANCE</option>
+   
+    </select>
+    <div class="alert-danger"  *ngIf="type_contrat.touched && type_contrat.invalid"> remplissage de votre id est obligatoir !</div>
+  </div>
+  
+  <div class="col-6">
+      <label for="inputAddress" class="form-label"  >Date Début      :</label>
+      <input type="text" class="form-control" ngModel #debutcontrat="ngModel" required  name="debutcontrat" placeholder="debutcontrat" ngModel="{{ row.date_debut |date: 'dd/MM/yyyy'}}">
+      <div class="alert-danger" *ngIf="debutcontrat.touched  && debutcontrat.invalid "> remplissage de votre date fin  est obligatoir !</div>
+    </div>
+    <div class="col-6">
+      <label for="inputAddress" class="form-label"  >Date fin      :</label>
+      <input type="text" class="form-control" ngModel #fincontrat="ngModel" required  name="fincontrat" placeholder="fincontrat" ngModel="{{ row.date_fin | date: 'dd/MM/yyyy'}}">
+      <div class="alert-danger" *ngIf="fincontrat.touched  && fincontrat.invalid "> remplissage de votre date fin  est obligatoir !</div>
+    </div>
+  <div class="col-12">
+    <button mat-raised-button color="warn" mat-dialog-close>Fermer</button>
+    <button style="margin-left:8px" mat-raised-button color="primary"  [disabled]="form.invalid" (click)="updatUtil()">Modifier</button>
+    <label for=""></label>
+  </div>
 </form>

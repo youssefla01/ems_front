@@ -24,8 +24,12 @@ export class GardeGuard implements CanActivate {
      // retourner un variable si true ou false 
    return new Promise((variable_prener_le_boolen,reject)=>
    {
-     if(this.serv.acceder()){variable_prener_le_boolen(true)}
+     if(this.serv.accederadmin())
+     {
+      variable_prener_le_boolen(true)
+    }
      else{
+      
        this.derict.navigate(['/login'])
        
        variable_prener_le_boolen(false)

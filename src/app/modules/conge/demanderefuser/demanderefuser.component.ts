@@ -12,7 +12,7 @@ export class DemanderefuserComponent implements OnInit {
   constructor(private api:ApiiService  )
    {
 
-    this.api.refuser().subscribe(data=>this.arraylist=data)
+    this.api.CongeRefuser().subscribe(data=>this.arraylist=data)
     }
 
   ngOnInit(): void {

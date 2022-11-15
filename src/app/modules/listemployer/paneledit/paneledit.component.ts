@@ -1,58 +1,80 @@
-import { Component, OnInit,ViewEncapsulation } from '@angular/core';
-import {MatCalendarCellClassFunction} from '@angular/material/datepicker';
+import { Component, Inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiiService } from 'src/app/service/apii.service';
-import { ListemployerComponent } from '../listemployer.component';
-
+import { Location } from '@angular/common';
+import { ServerService } from 'src/app/service/server.service';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 @Component({
   selector: 'app-paneledit',
   templateUrl: './paneledit.component.html',
   styleUrls: ['./paneledit.component.scss']
- 
+  
 })
 export class PaneleditComponent implements OnInit {
-   a ="redouane"
-   tabedite ={
+  id_user : any 
+  dataArray:any = [];
+  id : any
+  
+ 
+  
+  constructor(private api:ApiiService  , private rout:Router ,public ser:ServerService, public _location:Location, @Inject(MAT_DIALOG_DATA) public data: any) { 
+   
+    
+    this.ser.getId(this.data).subscribe({
+      next: (data) => {
+        this.dataArray = data;
+        console.log(data);
+        console.log('nom' ,this.data.nom);
+      },
+      error: (e) => console.error(e)
+      
+    
+  });
+  
+    
+}
+  updatUtil(){
+    const datarow = {
+      nom : this.dataArray.nom,
+      prenom : this.dataArray.prenom
+    };
+    console.log(this.dataArray.nom)
+    this.ser.updateUtil(this.data, datarow).subscribe(
+      response => {
+        console.log(response);
+      },
+      error => {console.log(error)
+      });
 
   
   }
-  dateClass: MatCalendarCellClassFunction<Date> = (cellDate, view) => {
-    // Only highligh dates inside the month view.
-    if (view === 'month') {
-      const date = cellDate.getDate();
 
-      // Highlight the 1st and 20th day of each month.
-      return date === 1 || date === 20 ? 'example-custom-date-class' : '';
+    refresh(): void {
+        this.rout.navigateByUrl("/admin", { skipLocationChange: true }).then(() => {
+        console.log(decodeURI(this._location.path()));
+        this.rout.navigate([decodeURI(this._location.path())]);
+        });
     }
-
-    return '';
-  };
-
-
-
-  constructor(private api:ApiiService  , private rout:Router ,  private data : ListemployerComponent) { 
-
-    this.tabedite=this.data.tab
     
-   console.log(this.tabedite)
-
-  }
+    
 
   ngOnInit(): void {
+    console.log(this.data)
   }
-  add(form:any)
+
+
+  addemploi(form:any)
   {
     try{
    let data=form.value ;
    console.log(data)
-   this.api.adddemande(data).subscribe(data=>console.log(data))
-   this.rout.navigate(['/admin/alldemande']) 
+   //this.api.addduser(data).subscribe(data=> this.rout.navigate(['/admin/posts']) )
+   alert("emploiyer est  bien ajouter ! ")
+  
+
    
   }
    
-
-   
-
    catch(e)
    {
     console.log("errur est :  "+e)
@@ -61,4 +83,6 @@ export class PaneleditComponent implements OnInit {
    }
   
   }
+
+ 
 }

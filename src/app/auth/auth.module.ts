@@ -7,12 +7,19 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule , FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { CreatuserComponent } from './components/creatuser/creatuser.component';
+import { NextcreatuserComponent } from './components/nextcreatuser/nextcreatuser.component';
+import { ContratUserComponent } from './components/contrat-user/contrat-user.component';
 
 
 @NgModule({
   declarations: [
-    LoginComponent
+    LoginComponent,
+    CreatuserComponent,
+    NextcreatuserComponent,
+    ContratUserComponent
   ],
   imports: [
     CommonModule,
@@ -21,7 +28,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatCardModule,
     MatButtonModule,
     MatInputModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule,HttpClientModule
   ],
   exports: [
     LoginComponent,

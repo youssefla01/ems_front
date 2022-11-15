@@ -4,7 +4,7 @@
         <div class="card">
           <div class="card-header text-center py-3">
             <h5 class="mb-0 text-center">
-              <strong>Liste d'emploiyer Existance </strong>
+              <strong>Conge Accepter </strong>
             </h5>
           </div>
           <div class="card-body">
@@ -13,24 +13,25 @@
                 <thead class="thead-dark">
                   <tr>
                    
-                    <th scope="col">id</th>
-                    <th scope="col">id_emp</th>
-                    <th scope="col">datedebut_c</th>
-                    <th scope="col">datedefin_c</th>
-                    <th scope="col">statut</th>
-                    <th scope="col" >desition</th>
+                    <th scope="col">id_conge</th>
+                    <th scope="col">date_demande</th>
+                    <th scope="col">nbr_jours</th>
+                    <th scope="col">date_debut_conge</th>
+                    <th scope="col">id_utilisateur</th>
+                   
                   </tr>
                 </thead>
                 <tbody>
                   <tr *ngFor="let i of arraylist">
                    
-                    <th cope="row">{{i._id}}</th>
+                    
                    
-                    <td>{{i.id_emp}}</td>
-                    <td>{{i.datedebut_c | date : "MM/dd/yy"}}</td>
-                    <td>{{i.datedefin_c | date : "MM/dd/yy"}}</td>
-                    <td>{{i.statut}}</td>
-                    <td >{{i.desition}}</td>
+                    <td>{{i.id_conge}}</td>
+                    <td>{{i.date_demande | date : "MM/dd/yy"}}</td>
+                    <td>{{i.nbr_jours }}</td>
+                    <td>{{i.date_debut_conge | date : "MM/dd/yy"}}</td>
+                    <td><a>{{i.id_utilisateur }}</a></td>
+                
                    
                     
                  

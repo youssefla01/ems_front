@@ -7,31 +7,70 @@ import { Observable } from 'rxjs';
 })
 export class ApiiService {
   headers = new HttpHeaders().set('Content-Type', 'application/json');
-  baseUri: string = 'http://localhost:4000/';
+  baseUri: string = 'http://localhost:8081/';
   constructor(private http:HttpClient ) {}
 
 
-
-  afficher()
-  {
-
-return this.http.get('http://localhost:4000/result_emploiyeur');
-
-
-}
-
-adddemande(add_dem:any) : Observable<any> {
- 
-  return this.http.post('http://localhost:4000/ajouterdemande',add_dem)
-
- }
- addduser(add_emp:any) : Observable<any> {
-  return this.http.post('http://localhost:4000/ajouter_emploiyeur',add_emp)
-
- }
+//>>>>>>>>>>>>>>>>>>>>>>>>>>  conge 
+//nombre de conge 
+nombreConge() :Observable<any>{ return this.http.get('http://localhost:8081/nombreconge')};
+//sans decision 
+Congesansdecision() :Observable<any>{ return this.http.get('http://localhost:8081/getcongesansdecision')};
+//conge accepter  
+CongeAccepte() :Observable<any>{ return this.http.get('http://localhost:8081/getCongeAcceptrer')};
+//conge refuser  
+CongeRefuser() :Observable<any>{ return this.http.get('http://localhost:8081/getCongeRefuser')};
+//historiqueconge
+Congehistorique() :Observable<any>{ return this.http.get('http://localhost:8081/getCongeRefuser')};
+//Post conge refuser 
+postCongeAccepter(id_conge:any) :Observable<any>{ return this.http.get('http://localhost:8081/postcongeaccepter/'+id_conge)};
+// post conge accepter 
+postCongeRefuser(id_conge:any) :Observable<any>{ return this.http.get('http://localhost:8081/postcongerefuser/'+id_conge)};
 
 
-alldemande() :Observable<any>{ return this.http.get('http://localhost:4000/demande_all')};
+//>>>>>>>>>>>>>>>>>>> type contat 
+getAllcontrattype() :Observable<any>{ return this.http.get('http://localhost:8081/getAllcontrattype')};
+
+//>>>>>>>>>>>>>>>>>>>> contrat  createContrat
+
+createContrat (user:any): Observable<any> { return this.http.post('http://localhost:8081/createContrat',user)}
+
+//>>>>>>>>>>>>>>>>>>>><login 
+//token 
+logine (user:any): Observable<any> { return this.http.post('http://localhost:8081/login',user)}
+//garde Admin
+accederadmin()  {return !!localStorage.getItem('admin');}
+//garde User
+ accederuser(){ return !!localStorage.getItem('user');}
+
+
+
+
+ //>>>>>>>>>>>>>>>>>>>>>>> User
+ //add user :  
+ Createuser (user:any): Observable<any> { return this.http.post('http://localhost:8081/createuser',user)}
+// demande user  getDemandeUser 
+getdemandeuser() :Observable<any>{ return this.http.get('http://localhost:8081/getdemandeuser')};
+//accepter
+accepteuser(id_utilisateur : any) :Observable<any>{ return this.http.get('http://localhost:8081/accepteuser/'+id_utilisateur)};
+//refuser
+refuseruser(id_utilisateur : any) :Observable<any>{ return this.http.get('http://localhost:8081/refuseruser/'+id_utilisateur)};
+
+//get demande accepter 
+getuseraccepte() :Observable<any>{ return this.http.get('http://localhost:8081/getuseraccepte')};
+//get demande refuser
+getuserrefuser() :Observable<any>{ return this.http.get('http://localhost:8081/getuserrefuser')};
+
+
+ //>>>>>>>>>>>>>>>>>>>>>>>>>>> utilisateur 
+ //add utilisateur 
+ addutilisateur (user:any): Observable<any> { return this.http.post('http://localhost:8081/createuser',user)}
+
+
+ //>>>>>>>>>>>>>>>>>>>>>role  
+ role() :Observable<any>{ return this.http.get('http://localhost:8081/getAllrole')};
+
+
 
  afficheruser()
  {
@@ -41,12 +80,12 @@ alldemande() :Observable<any>{ return this.http.get('http://localhost:4000/deman
   
  demandesans_desition()
  {
-  return this.http.get('http://localhost:4000/result_demande'); 
+  return this.http.get('http://localhost:8081/getAllconge'); 
  }
  deletdemande(_id:any): Observable<any>
  {
 
-  return this.http.delete('http://localhost:4000/delet_demande/'+_id)
+  return this.http.delete('http://localhost:8081/delet_demande/'+_id)
    ;
   
   
@@ -63,75 +102,8 @@ alldemande() :Observable<any>{ return this.http.get('http://localhost:4000/deman
   return this.http.get('http://localhost:4000/result_demande_accepter');  
  }
  deleteemploiyeur(_id :any): Observable<any> {
-
-  
   return this.http.delete('http://localhost:4000/delet_emploiyeur/'+_id)
 
  }
-
-
-gettoken (){ 
-
-  return this.http.get('http://localhost:4000/tokentest')
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- data = {
-  id:'199625',
-  nam:'redouane',
-  prenom:'aitelbacha' 
-}
-
-
-
-accer=false ;
-
-
-acceder()
- {
-    if(this.data.id=='199625')
-    {   this.accer=true ; 
-        return this.accer
-    }
-    else 
-    {
-        this.accer=false ; 
-        return this.accer 
-    }
- }
-
-
- accederuser()
- {
-    if(this.data.id=='1996625')
-    {   this.accer=true ; 
-        return this.accer
-    }
-    else 
-    {
-        this.accer=false ; 
-        return this.accer 
-    }
- }
-
-
-
- 
-
 
 }

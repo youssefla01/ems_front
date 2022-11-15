@@ -12,7 +12,7 @@ export class DemandeaccepterComponent implements OnInit {
   constructor(private api:ApiiService  )
    {
 
-    this.api.accepter().subscribe(data=>this.arraylist=data)
+    this.api.CongeAccepte().subscribe(data=>this.arraylist=data)
     }
 
   ngOnInit(): void {

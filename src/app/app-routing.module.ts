@@ -15,17 +15,15 @@ import { GardeuserGuard } from './gardeutilisateur/gardeuser.guard';
 import { ContactComponent } from 'src/app/modules/contact/contact.component';
 import { TestComponent } from './modules/test/test.component';
 
+import { EmployeAccepterComponent } from './modules/listemployer/employe-accepter/employe-accepter.component';
+import { EmployeRefuserComponent } from './modules/listemployer/employe-refuser/employe-refuser.component';
+
 
 
 
 const routes: Routes = [
 
 
-// test 
-{
-  path:'test',
-   component:  TestComponent
-} ,
   
   {
    
@@ -38,11 +36,11 @@ const routes: Routes = [
       
       children: [{
         path: '',
-        component: UserComponent,canActivate:[GardeGuard]
+        component: UserComponent,canActivate:[GardeuserGuard]
       } ,  
       {
         path:'contact',
-         component:  ContactComponent,canActivate:[GardeGuard]
+         component:  ContactComponent,canActivate:[GardeuserGuard]
       }
      
       
@@ -64,6 +62,14 @@ const routes: Routes = [
     path:'listemployer',
      component: ListemployerComponent ,canActivate:[GardeGuard] 
   },
+  {
+    path:'employeAccepter',
+     component: EmployeAccepterComponent ,
+  },
+  {
+    path:'employeRefuser',
+     component: EmployeRefuserComponent ,
+  },
 
   {
     path:'newdemande',
@@ -80,7 +86,7 @@ const routes: Routes = [
   {
     path:'demanderefuser',
      component:  DemanderefuserComponent,canActivate:[GardeGuard]
-  }
+  },
 
 
  

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ApiiService } from 'src/app/service/apii.service';
 
+import { ApiiService } from 'src/app/service/apii.service';
+import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
 @Component({
   selector: 'app-newdemande',
   templateUrl: './newdemande.component.html',
@@ -9,22 +10,39 @@ import { ApiiService } from 'src/app/service/apii.service';
 })
 export class NewdemandeComponent implements OnInit {
 
-  dataArray : any=[]
+  dataArray: any ; 
  
   constructor(private ser:ApiiService , private rout:Router) {
 
    
-    this.ser.demandesans_desition().subscribe(data=>this.dataArray=data)
+    this.ser.Congesansdecision().subscribe(data=>this.dataArray=data)
+    console.log(this.dataArray);
+
+    
     
    }
-   deleted(id:any)
+
+
+
+
+   accepter(id:any)
    {
-     this.ser.deletdemande(id).subscribe(response=>{
-    
-      this.rout.navigate(['/admin/alldemande']) 
       
+        this.ser.postCongeAccepter(id).subscribe(
      
-    })
+     
+          send=>console.log(send) )
+          window.location.reload();
+   }
+   refuser(id:any)
+   {
+
+  
+    this.ser.postCongeRefuser(id).subscribe(
+ 
+ 
+      send=>console.log(send) )
+      window.location.reload();
    }
 
   ngOnInit(): void {

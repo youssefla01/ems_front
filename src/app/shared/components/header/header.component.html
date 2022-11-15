@@ -18,15 +18,10 @@
                     </button>
                 </li>
                 <li>
-                    <button mat-button [matMenuTriggerFor]="menu">
+                    <button mat-icon-button (click)="signout()">
                         <mat-icon>person_outline</mat-icon>
                     </button>
-                    <mat-menu #menu="matMenu">
-                      <button mat-menu-item>
-                        <mat-icon>exit_to_app</mat-icon>
-                        <span routerLink="/login">Sign out</span>
-                      </button>
-                    </mat-menu>
+                 
                 </li>
             </ul>
         </div>

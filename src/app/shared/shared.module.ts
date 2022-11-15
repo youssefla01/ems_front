@@ -12,7 +12,8 @@ import { MatListModule} from '@angular/material/list';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { RouterModule } from '@angular/router';
 import {MatTableModule} from '@angular/material/table';
-
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 
 
@@ -36,7 +37,7 @@ import {MatTableModule} from '@angular/material/table';
     MatListModule,
     FlexLayoutModule,
     RouterModule,
-    MatTableModule   
+    MatTableModule,FormsModule,ReactiveFormsModule,MatExpansionModule
   ],
   exports:[
     HeaderComponent,

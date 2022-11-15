@@ -34,7 +34,7 @@ export class PostsComponent implements OnInit {
   
   ngOnInit(): void {
 
-    this.ser.alldemande().subscribe(data=>this.dataArray=data)
+    this.ser.Congesansdecision().subscribe(data=>this.dataArray=data)
     
     
       

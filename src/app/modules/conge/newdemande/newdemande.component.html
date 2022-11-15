@@ -9,19 +9,21 @@
                 <div class="spinner-border text-primary" role="status">
                     <span class="visually-hidden">Loading...</span>
                   </div>
-              <h5 class="card-title">{{i.id_emp}}</h5>
-              <p class="card-text"> demander un conger !! </p>
+
+              <h5 class="card-title"> Id conge est :  {{i.id_conge}}</h5>
+              <p class="card-text">{{i.nom}} {{i.prenom }} <br><br> a  demander un conger !! </p>
               </div>
             </div>
             <ul class="list-group list-group-flush">
-              <li class="list-group-item"> date debut congé :  {{i.datedebut_c | date : "MM/dd/yy"}}</li>
-              <li class="list-group-item"> date fin congé :  {{i.datedefin_c| date : "MM/dd/yy"}}</li>
-              <li class="list-group-item">statut :   {{i.statut}}  </li>
+              <li class="list-group-item"> Date demande congé :  {{i.date_demande | date : "MM/dd/yy"}}</li>
+              <li class="list-group-item"> Date debut congé :  {{i.date_debut_conge| date : "MM/dd/yy"}}</li>
+              <li class="list-group-item"> Nobre de jours demander :   {{i.nbr_jours}}  jours  </li>
             </ul>
             <div class="card-body">
               
-              <button type="button" class="btn btn-outline-success">accepter</button>
-              <button type="button" class="btn btn-outline-danger" (click)="deleted(i._id)" >refuser</button>
+           
+              <button type="button" class="btn btn-success" (click)="accepter(i.id_conge)" >Accepter</button><br><br>
+              <button type="button" class="btn btn-danger" (click)="refuser(i.id_conge)">Refuser</button>
             </div>
           </div>
     
