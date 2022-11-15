@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router,ActivatedRoute } from '@angular/router';
 import { ApiiService } from 'src/app/service/apii.service';
 import { Location } from '@angular/common';
 import { ServerService } from 'src/app/service/server.service';
@@ -11,9 +11,18 @@ import { ServerService } from 'src/app/service/server.service';
 export class PanelajoutComponent implements OnInit {
 
   dataArray:any = [];
+  id = 8;
+  constructor(private api:ApiiService  , private router: Router,private rout:Router ,public ser:ServerService, public _location:Location) { 
+    this.id = this.activatedRoute.snapshot.paramMap.get('id');
+    this.ser.getId(this.id).subscribe({
+      next: (data) => {
+        this.dataArray = data;
+        console.log(data);
+      },
+      error: (e) => console.error(e)
+    
+  });
 
-  constructor(private api:ApiiService  , private rout:Router ,public ser:ServerService, public _location:Location) { 
-  
   }
 
     refresh(): void {

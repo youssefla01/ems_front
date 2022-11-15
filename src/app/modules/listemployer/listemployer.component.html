@@ -3,7 +3,7 @@
 <mat-divider></mat-divider>
 
 <div  fxLayoutAlign="flex-end" style="margin-top:10px ;">
-    <button mat-raised-button color="primary" (click)="openDialog()">
+    <button mat-raised-button color="primary">
         <mat-icon>person_add</mat-icon> Ajouter Employer
     </button>
 </div>
@@ -26,7 +26,7 @@
       <td>{{ row.date_de_naissance}}</td>
       <td>{{ row.type }}</td>
       <td>
-        <button mat-icon-button color="" (click)="openDialog()"><mat-icon>remove_red_eye</mat-icon></button>
+        <button mat-icon-button color="" (click)="openDialog(row.id_utilisateur)"><mat-icon>remove_red_eye</mat-icon></button>
         <button mat-icon-button color="primary" ><mat-icon>edit</mat-icon></button>
         <button mat-icon-button color="warn"><mat-icon>delete</mat-icon></button>
       </td>

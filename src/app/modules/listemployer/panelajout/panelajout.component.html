@@ -1,7 +1,7 @@
 <h1 mat-dialog-title>Ajouter Employe Form</h1>
 <form #form="ngForm" class="row g-3" (ngSubmit)="addemploi(form)">
   <div class="col-md-6">
-    <label for="inputEmail4" class="form-label" >cin</label>
+    <label for="inputEmail4" class="form-label" >nom</label>
     <input type="text" class="form-control" ngModel  required  #cin="ngModel"  name="cin" placeholder="cin">
     <div class="alert-danger"  *ngIf="cin.touched && cin.invalid"> remplissage de votre id est obligatoir !</div>
     
@@ -65,5 +65,8 @@
     <label for=""></label>
   </div>
 </form>
+
+
+
 
 

@@ -10,13 +10,13 @@ export class ServerService {
   constructor(private http: HttpClient) { 
 
   }
-  baseUrl = 'http://localhost:8081/getAllutilisateur';
+  baseUrl = 'http://localhost:8081/';
 getUtilisateur()
  {
-  return this.http.get(`${this.baseUrl}`);
+  return this.http.get('http://localhost:8081/getAllutilisateur');
 }
 getId(id: any)
 {
-  return this.http.get(`${this.baseUrl}/${id}`);
+  return this.http.get(`http://localhost:8081/getUtilisateur/${id}`);
 }
 }

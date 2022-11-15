@@ -17,6 +17,8 @@ import { UserComponent } from './user/user/user.component';
 import { TestComponent } from './modules/test/test.component';
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { PanelsoldComponent } from './modules/conge/panelsold/panelsold.component';
+
 
 
 
@@ -32,7 +34,9 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     DemandeaccepterComponent,
     DemanderefuserComponent,
     UserComponent,
-    TestComponent,     
+    TestComponent,
+    PanelsoldComponent,
+       
      
   ],
   imports: [

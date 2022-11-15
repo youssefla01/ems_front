@@ -64,13 +64,14 @@ export class ListemployerComponent implements AfterViewInit {
   }
   
   
-  openDialog() {
+  openDialog(id : any) {
 
     this.dialog.open(PanelajoutComponent, {
       width:'30%'
     });
+    console.log(id)
   }
-  openDialog1() {
+  openDialog1(id : any) {
 
     this.dialog.open(PaneleditComponent, {
       width:'30%'
