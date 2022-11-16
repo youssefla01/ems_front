@@ -30,7 +30,27 @@ export class PanelsoldComponent implements OnInit {
   }
 
 
-    
+  accepter(id:any)
+  {
+    console.log(id)
+     
+       this.api.postCongeAccepter(id).subscribe(
+
+         send=>console.log(send) )
+        window.location.reload();
+  }
+  refuser(id:any)
+  {
+
+ 
+   this.api.postCongeRefuser(id).subscribe(
+
+
+     send=>console.log(send) )
+     window.location.reload();
+  }
+
+
 
   ngOnInit(): void {
     console.log(this.data)

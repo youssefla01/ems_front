@@ -31,9 +31,8 @@
   </div>
 
   <div class="col-12">
-    <button mat-raised-button color="warn" mat-dialog-close>Fermer</button>
-    <button style="margin-left:8px" mat-raised-button color="primary"  [disabled]="form.invalid">Imprimer</button>
-    <label for=""></label>
+    <button type="button" class="btn btn-success" (click)="accepter(row.id_conge)" >Accepter</button><br><br>
+    <button type="button" class="btn btn-danger" (click)="refuser(row.id_conge)">Refuser</button>
   </div>
 </form>
 
