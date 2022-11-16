@@ -13,20 +13,23 @@
     <input type="text" class="form-control" ngModel #prenom="ngModel" required name="prenom" placeholder="prenom" ngModel="{{ row.prenom  }}" disabled>
     
   </div>
-  <div class="col-md-6">
-    <label for="inputPassword4" class="form-label"   >date de naissance     :</label> 
-    <input type="text" class="form-control" ngModel #date_de_naissance="ngModel" required name="date_de_naissance" placeholder="date_de_naissance" ngModel="{{ row.date_de_naissance }}" disabled>
-    
-  </div>
+
 
   <div class="col-md-6">
     <label for="inputPassword4" class="form-label"   >derinier conge a pris    :</label> 
     <input type="text" class="form-control" ngModel #date_miss="ngModel" required name="date_miss" placeholder="date_miss" ngModel="{{ row.date_miss }}" disabled>
     
   </div>
+
+  <div class="col-md-6">
+    <label for="inputPassword4" class="form-label"   >Nobre de conge demander : </label> 
+    <input type="text" class="form-control" ngModel #nbr_jours="ngModel" required name="nbr_jours" placeholder="nbr_jours" ngModel="{{ row.nbr_jours  }}" disabled>
+    
+  </div>
+
   <div class="col-md-6">
     <label for="inputPassword4" class="form-label"   >Solde de Conge restant est     :</label> 
-    <input type="text" class="form-control" ngModel #nbr_jours="ngModel" required name="nbr_jours" placeholder="nbr_jours" ngModel="{{ row.nbr_jours }}" disabled>
+    <input type="text" class="form-control" ngModel #nbr_jours="ngModel" required name="nbr_jours_sold" placeholder="nbr_jours_sold" ngModel="{{ row.nbr_jours_sold }}" disabled>
     
   </div>
 
