@@ -28,6 +28,10 @@ import { EmployeAccepterComponent } from 'src/app/modules/listemployer/employe-a
 import { EmployeRefuserComponent } from 'src/app/modules/listemployer/employe-refuser/employe-refuser.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { NewdemandeComponent } from 'src/app/modules/conge/newdemande/newdemande.component';
+import { PanelsoldComponent } from 'src/app/modules/conge/panelsold/panelsold.component';
+import { DemandeaccepterComponent } from 'src/app/modules/conge/demandeaccepter/demandeaccepter.component';
+import { DemanderefuserComponent } from 'src/app/modules/conge/demanderefuser/demanderefuser.component';
+
 
 
 
@@ -50,9 +54,10 @@ import { NewdemandeComponent } from 'src/app/modules/conge/newdemande/newdemande
     ContactComponent,
     EmployeAccepterComponent,
     EmployeRefuserComponent,
-    NewdemandeComponent
-    
-    
+    NewdemandeComponent,
+    PanelsoldComponent,
+    DemanderefuserComponent,
+    DemandeaccepterComponent
   ],
   imports: [
     CommonModule,
