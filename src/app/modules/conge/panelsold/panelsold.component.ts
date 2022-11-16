@@ -15,10 +15,10 @@ export class PanelsoldComponent implements OnInit {
   
  
   
-  constructor(private api:ApiiService  , private rout:Router ,public ser:ServerService, public _location:Location, @Inject(MAT_DIALOG_DATA) public data: any) { 
+  constructor(private api:ApiiService  , private rout:Router ,public ser:ServerService, @Inject(MAT_DIALOG_DATA) public data: any) { 
 
     
-    this.ser.getId(this.data).subscribe({
+    this.api.getsolde(this.data).subscribe({
       next: (data) => {
         this.dataArray = data;
         console.log(data);
@@ -30,6 +30,7 @@ export class PanelsoldComponent implements OnInit {
   }
 
 
+    
 
   ngOnInit(): void {
     console.log(this.data)

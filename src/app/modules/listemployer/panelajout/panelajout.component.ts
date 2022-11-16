@@ -30,14 +30,7 @@ export class PanelajoutComponent implements OnInit {
     
   }
 
-    refresh(): void {
-        this.rout.navigateByUrl("/admin", { skipLocationChange: true }).then(() => {
-        console.log(decodeURI(this._location.path()));
-        this.rout.navigate([decodeURI(this._location.path())]);
-        });
-    }
-    
-    
+
 
   ngOnInit(): void {
     console.log(this.data)

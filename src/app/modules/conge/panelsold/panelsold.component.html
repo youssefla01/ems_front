@@ -1,60 +1,39 @@
 <h1 mat-dialog-title>Information de l'employe</h1>
-<!-- <form #form="ngForm"  class="row g-3" *ngFor="let row of dataArray ">
+<form #form="ngForm"  class="row g-3" *ngFor="let row of dataArray ">
   <div class="col-md-6">
     <label for="inputEmail4" class="form-label" >nom</label>
-    <input type="text" class="form-control" required  #nome="ngModel"  name="nome" placeholder="nom" ngModel="{{ row.nom }}" disabled>
-    <div class="alert-danger"  *ngIf="nome.touched && nome.invalid"> remplissage de votre id est obligatoir !</div>
+    <input type="text" class="form-control" required  #nom="ngModel"  name="nom" placeholder="nom" ngModel="{{ row.nom }}" disabled>
+
+    
+  </div>
+
+ 
+  <div class="col-md-6">
+    <label for="inputPassword4" class="form-label"   >prenom :</label> 
+    <input type="text" class="form-control" ngModel #prenom="ngModel" required name="prenom" placeholder="prenom" ngModel="{{ row.prenom  }}" disabled>
     
   </div>
   <div class="col-md-6">
-    <label for="inputEmail4" class="form-label" >prenom</label>
-    <input type="text" class="form-control" ngModel  required  #prenom="ngModel"  name="prenom" placeholder="prenom" ngModel="{{ row.prenom }}" disabled>
-    <div class="alert-danger"  *ngIf="prenom.touched && prenom.invalid"> remplissage de votre id est obligatoir !</div>
-    
-  </div>
-  <div class="col-md-6">
-    <label for="inputEmail4" class="form-label" >Email</label>
-    <input type="email" class="form-control" ngModel  required  #nationatily="ngModel"  name="email" ngModel="{{ row.email }}" disabled>
-    <div class="alert-danger"  *ngIf="nationatily.touched && nationatily.invalid"> remplissage de votre id est obligatoir !</div>
-    
-  </div> <div class="col-md-6">
-    <label for="inputEmail4" class="form-label" >username </label>
-    <input type="text" class="form-control" ngModel  required  #Departement="ngModel"  name="Departement"  ngModel="{{ row.username }}" disabled>
-    <div class="alert-danger"  *ngIf="Departement.touched && Departement.invalid"> remplissage de votre id est obligatoir !</div>
-    
-  </div> 
-  <div class="col-md-6">
-    <label for="inputPassword4" class="form-label"   >date_de_naissance     :</label> 
+    <label for="inputPassword4" class="form-label"   >date de naissance     :</label> 
     <input type="text" class="form-control" ngModel #date_de_naissance="ngModel" required name="date_de_naissance" placeholder="date_de_naissance" ngModel="{{ row.date_de_naissance }}" disabled>
-    <div class="alert-danger" *ngIf="date_de_naissance.touched  && date_de_naissance.invalid "> remplissage de votre date debut est obligatoir !</div>
     
   </div>
 
   <div class="col-md-6">
-    <label for="type_contrat">type_contrat</label>
-    <select name="type_contrat" class="form-control"   ngModel  required  #type_contrat="ngModel"   placeholder="type_contrat" ngModel="{{ row.type }}" disabled>
-      <option selected>CDD</option>
-      <option selected>CDI</option>
-      <option selected>ALTERNANCE</option>
-   
-    </select>
-    <div class="alert-danger"  *ngIf="type_contrat.touched && type_contrat.invalid"> remplissage de votre id est obligatoir !</div>
+    <label for="inputPassword4" class="form-label"   >derinier conge a pris    :</label> 
+    <input type="text" class="form-control" ngModel #date_miss="ngModel" required name="date_miss" placeholder="date_miss" ngModel="{{ row.date_miss }}" disabled>
+    
   </div>
-  
-  <div class="col-6">
-      <label for="inputAddress" class="form-label"  >Date Début      :</label>
-      <input type="text" class="form-control" ngModel #debutcontrat="ngModel" required  name="debutcontrat" placeholder="debutcontrat" ngModel="{{ row.date_debut | date: 'shortDate'  }}" disabled>
-      <div class="alert-danger" *ngIf="debutcontrat.touched  && debutcontrat.invalid "> remplissage de votre date fin  est obligatoir !</div>
-    </div>
-    <div class="col-6">
-      <label for="inputAddress" class="form-label"  >Date fin      :</label>
-      <input type="text" class="form-control" ngModel #fincontrat="ngModel" required  name="fincontrat" placeholder="fincontrat" ngModel="{{ row.date_fin}}" disabled>
-      <div class="alert-danger" *ngIf="fincontrat.touched  && fincontrat.invalid "> remplissage de votre date fin  est obligatoir !</div>
-    </div>
+  <div class="col-md-6">
+    <label for="inputPassword4" class="form-label"   >Solde de Conge restant est     :</label> 
+    <input type="text" class="form-control" ngModel #nbr_jours="ngModel" required name="nbr_jours" placeholder="nbr_jours" ngModel="{{ row.nbr_jours }}" disabled>
+    
+  </div>
+
   <div class="col-12">
     <button mat-raised-button color="warn" mat-dialog-close>Fermer</button>
     <button style="margin-left:8px" mat-raised-button color="primary"  [disabled]="form.invalid">Imprimer</button>
     <label for=""></label>
   </div>
-</form> -->
+</form>
 
