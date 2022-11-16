@@ -1,4 +1,4 @@
-<div class="row"  >
+<!--<div class="row"  >
 
     <div class="col" *ngFor="let i of dataArray"   >
         
@@ -28,4 +28,40 @@
     
     </div>
     
-  </div>
+  </div>-->
+
+  <div class="container">
+    <div class="row">
+        <div class="col-lg-4" *ngFor="let i of dataArray">
+            <div class="card card-margin">
+                <div class="card-header no-border">
+                    <h5 class="card-title"><b> {{i.nom}} {{i.prenom }}</b></h5>
+                    <div class="spinner-border text-primary" role="status">
+                      <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+                <div class="card-body pt-0">
+                    <div class="widget-49">
+                        <div class="widget-49-title-wrapper">
+                            <div class="widget-49-date-primary">
+                                <span class="widget-49-date-day">{{i.date_demande | date : "dd/"}}</span>
+                                <span class="widget-49-date-month">{{i.date_demande | date : "MM"}}</span>
+                            </div>
+                            <div class="widget-49-meeting-info">
+                                <span class="widget-49-pro-title">Id conge est :  {{i.id_conge}}</span>
+                                <span class="widget-49-meeting-time">12:00 to 13.30 Hrs</span>
+                            </div>
+                        </div>
+                        <ol class="widget-49-meeting-points">
+                            <li class="widget-49-meeting-item"><span>Date debut congé :  {{i.date_debut_conge| date : "MM/dd/yy"}}</span></li>
+                            <li class="widget-49-meeting-item"><span>Date fin congé :  {{i.date_debut_conge| date : "MM/dd/yy"}}</span></li>
+                            <li class="widget-49-meeting-item"><span>Nombre de jours demander :   {{i.nbr_jours}}  jours  </span></li>
+                        </ol>
+                        <div class="widget-49-meeting-action">
+                            <a href="#" mat-raised-button color="primary" (click)="panelsold(i.id_utilisateur)">Consulter</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        

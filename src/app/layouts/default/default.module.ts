@@ -27,6 +27,7 @@ import {FormsModule , ReactiveFormsModule} from '@angular/forms';
 import { EmployeAccepterComponent } from 'src/app/modules/listemployer/employe-accepter/employe-accepter.component';
 import { EmployeRefuserComponent } from 'src/app/modules/listemployer/employe-refuser/employe-refuser.component';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { NewdemandeComponent } from 'src/app/modules/conge/newdemande/newdemande.component';
 
 
 
@@ -48,7 +49,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
     PanelajoutComponent,
     ContactComponent,
     EmployeAccepterComponent,
-    EmployeRefuserComponent
+    EmployeRefuserComponent,
+    NewdemandeComponent
     
     
   ],
