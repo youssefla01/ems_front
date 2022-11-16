@@ -30,24 +30,29 @@ export class PanelsoldComponent implements OnInit {
   }
 
 
-  accepter(id:any)
+  accepter(id:any,motif:any)
   {
-    console.log(id)
+    
+  let data=motif.value ; // objet 1 
+  let user ={id_conge : id } // objet 2 
+  var obj = Object.assign(data, user); //  objet 1+2  pour 
+
      
-       this.api.postCongeAccepter(id).subscribe(
+      this.api.postCongeAccepter(obj).subscribe(send=>console.log(send));
+      window.location.reload();
 
-         send=>console.log(send) )
-        window.location.reload();
   }
-  refuser(id:any)
+  refuser(id:any,motif:any)
   {
 
- 
-   this.api.postCongeRefuser(id).subscribe(
-
-
-     send=>console.log(send) )
-     window.location.reload();
+    let data=motif.value ; // objet 1 
+    let user ={id_conge : id } // objet 2 
+    var obj = Object.assign(data, user); //  objet 1+2  pour 
+  
+       
+        this.api.postCongeRefuser(obj).subscribe(send=>console.log(send));
+         window.location.reload();
+  
   }
 
 

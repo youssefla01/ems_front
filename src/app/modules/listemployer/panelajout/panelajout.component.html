@@ -48,7 +48,7 @@
     </div>
     <div class="col-6">
       <label for="inputAddress" class="form-label"  >Date fin      :</label>
-      <input type="text" class="form-control" ngModel #fincontrat="ngModel" required  name="fincontrat" placeholder="fincontrat" ngModel="{{ row.date_fin}}" disabled>
+      <input type="text" class="form-control" ngModel #fincontrat="ngModel" required  name="fincontrat" placeholder="fincontrat" ngModel="{{ row.date_fin | date: 'shortDate' }}" disabled>
       <div class="alert-danger" *ngIf="fincontrat.touched  && fincontrat.invalid "> remplissage de votre date fin  est obligatoir !</div>
     </div>
   <div class="col-12">

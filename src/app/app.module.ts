@@ -30,6 +30,7 @@ import { PanelsoldComponent } from './modules/conge/panelsold/panelsold.componen
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +40,7 @@ import { PanelsoldComponent } from './modules/conge/panelsold/panelsold.componen
     UserComponent,
     TestComponent,
     PanelsoldComponent,
+
        
      
   ],

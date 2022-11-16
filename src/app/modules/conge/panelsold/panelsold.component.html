@@ -1,5 +1,5 @@
 <h1 mat-dialog-title>Solde de conge </h1>
-<form #form="ngForm"  class="row g-3" *ngFor="let row of dataArray ">
+<form #form="ngForm"  class="row g-3"  *ngFor="let row of dataArray ">
   <div class="col-md-6">
     <label for="inputEmail4" class="form-label" >nom</label>
     <input type="text" class="form-control" required  #nom="ngModel"  name="nom" placeholder="nom" ngModel="{{ row.nom }}" disabled>
@@ -33,9 +33,14 @@
     
   </div>
 
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">motif : </label>
+    <textarea class="form-control" id="motif" rows="3"   ngModel  required  #motif="ngModel"  name="motif" placeholder="motif"></textarea>
+  </div>
+
   <div class="col-12">
-    <button type="button" class="btn btn-success" (click)="accepter(row.id_conge)" >Accepter</button><br><br>
-    <button type="button" class="btn btn-danger" (click)="refuser(row.id_conge)">Refuser</button>
+    <button type="button" class="btn btn-success" (click)="accepter(row.id_conge,form)" >Accepter</button><br><br>
+    <button type="button" class="btn btn-danger" (click)="refuser(row.id_conge,form)">Refuser</button>
   </div>
 </form>
 
