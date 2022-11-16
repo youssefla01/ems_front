@@ -14,6 +14,8 @@ export class ApiiService {
 //>>>>>>>>>>>>>>>>>>>>>>>>>>  conge 
 //nombre de conge 
 nombreConge() :Observable<any>{ return this.http.get('http://localhost:8081/nombreconge')};
+//cbr conge ce mois
+nombrecongemois() :Observable<any>{ return this.http.get('http://localhost:8081/nombrecongemois')};
 //sans decision 
 Congesansdecision() :Observable<any>{ return this.http.get('http://localhost:8081/getcongesansdecision')};
 //conge accepter  
