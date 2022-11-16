@@ -18,13 +18,13 @@ export class UserComponent implements OnInit {
   deleteemploi(id: any ,i: number)
   
   {
-     this.api.deleteemploiyeur(id).subscribe(Response=>{
+    //  this.api.deleteemploiyeur(id).subscribe(Response=>{
       
-      console.log(Response)
-      this.dataArray.splice(i,1)
+    //   console.log(Response)
+    //   this.dataArray.splice(i,1)
 
     
-    })
+    // })
 
   } 
   logine(form:any)

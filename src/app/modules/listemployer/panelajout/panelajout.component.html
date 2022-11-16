@@ -2,17 +2,7 @@
 <form #form="ngForm"  class="row g-3" *ngFor="let row of dataArray ">
   <div class="col-md-6">
     <label for="inputEmail4" class="form-label" >nom</label>
-<<<<<<< HEAD
-    <input type="text" class="form-control" ngModel  required  #cin="ngModel"  name="cin" placeholder="cin">
-    <div class="alert-danger"  *ngIf="cin.touched && cin.invalid"> remplissage de votre id est obligatoir !</div>
-    
-  </div>
-  <div class="col-md-6">
-    <label for="inputEmail4" class="form-label" >nome</label>
-    <input type="text" class="form-control" ngModel  required  #nome="ngModel"  name="nome" placeholder="nome">
-=======
     <input type="text" class="form-control" required  #nome="ngModel"  name="nome" placeholder="nom" ngModel="{{ row.nom }}" disabled>
->>>>>>> d8ede72b6e04d3c81a6b4f373e5621dcb1014e05
     <div class="alert-danger"  *ngIf="nome.touched && nome.invalid"> remplissage de votre id est obligatoir !</div>
     
   </div>
@@ -67,11 +57,3 @@
     <label for=""></label>
   </div>
 </form>
-<<<<<<< HEAD
-
-
-
-
-
-=======
->>>>>>> d8ede72b6e04d3c81a6b4f373e5621dcb1014e05

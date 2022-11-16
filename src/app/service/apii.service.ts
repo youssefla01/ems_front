@@ -28,12 +28,22 @@ postCongeAccepter(id_conge:any) :Observable<any>{ return this.http.get('http://l
 postCongeRefuser(id_conge:any) :Observable<any>{ return this.http.get('http://localhost:8081/postcongerefuser/'+id_conge)};
 
 
+
+
+
 //>>>>>>>>>>>>>>>>>>> type contat 
 getAllcontrattype() :Observable<any>{ return this.http.get('http://localhost:8081/getAllcontrattype')};
 
-//>>>>>>>>>>>>>>>>>>>> contrat  createContrat
 
+
+
+
+
+//>>>>>>>>>>>>>>>>>>>> contrat  createContrat
 createContrat (user:any): Observable<any> { return this.http.post('http://localhost:8081/createContrat',user)}
+
+
+
 
 //>>>>>>>>>>>>>>>>>>>><login 
 //token 
@@ -42,6 +52,7 @@ logine (user:any): Observable<any> { return this.http.post('http://localhost:808
 accederadmin()  {return !!localStorage.getItem('admin');}
 //garde User
  accederuser(){ return !!localStorage.getItem('user');}
+
 
 
 
@@ -62,9 +73,15 @@ getuseraccepte() :Observable<any>{ return this.http.get('http://localhost:8081/g
 getuserrefuser() :Observable<any>{ return this.http.get('http://localhost:8081/getuserrefuser')};
 
 
+
+
+
  //>>>>>>>>>>>>>>>>>>>>>>>>>>> utilisateur 
  //add utilisateur 
  addutilisateur (user:any): Observable<any> { return this.http.post('http://localhost:8081/createuser',user)}
+
+
+
 
 
  //>>>>>>>>>>>>>>>>>>>>>role  
@@ -72,38 +89,8 @@ getuserrefuser() :Observable<any>{ return this.http.get('http://localhost:8081/g
 
 
 
- afficheruser()
- {
-  return this.http.get('http://localhost:4000/result_user'); 
 
- }
-  
- demandesans_desition()
- {
-  return this.http.get('http://localhost:8081/getAllconge'); 
- }
- deletdemande(_id:any): Observable<any>
- {
-
-  return this.http.delete('http://localhost:8081/delet_demande/'+_id)
-   ;
-  
-  
- }
- 
- refuser ()
- {
-  return this.http.get('http://localhost:4000/result_demande_refuser'); 
-
- }
- accepter ()
- {
-
-  return this.http.get('http://localhost:4000/result_demande_accepter');  
- }
- deleteemploiyeur(_id :any): Observable<any> {
-  return this.http.delete('http://localhost:4000/delet_emploiyeur/'+_id)
-
- }
+ //>>>>>>>>>>>>>>>>>>>>>solde /getsolde/:idutilisateur 
+ getsolde(id_utilisateur : any) :Observable<any>{ return this.http.get('http://localhost:8081/getsolde/'+id_utilisateur)};
 
 }

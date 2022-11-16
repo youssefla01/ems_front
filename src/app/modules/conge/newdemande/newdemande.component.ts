@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 
 import { ApiiService } from 'src/app/service/apii.service';
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { PanelsoldComponent } from '../panelsold/panelsold.component';
+import { PanelajoutComponent } from '../../listemployer/panelajout/panelajout.component';
 @Component({
   selector: 'app-newdemande',
   templateUrl: './newdemande.component.html',
@@ -12,7 +14,7 @@ export class NewdemandeComponent implements OnInit {
 
   dataArray: any ; 
  
-  constructor(private ser:ApiiService , private rout:Router) {
+  constructor(private ser:ApiiService , private rout:Router , public dialog: MatDialog) {
 
    
     this.ser.Congesansdecision().subscribe(data=>this.dataArray=data)
@@ -23,6 +25,14 @@ export class NewdemandeComponent implements OnInit {
    }
 
 
+   panelsold(id:any)
+   {
+    const dialogRef = this.dialog.open(PanelsoldComponent, {
+      width:'50%',
+      data: id 
+    });
+    console.log(id)
+   }
 
 
    accepter(id:any)
