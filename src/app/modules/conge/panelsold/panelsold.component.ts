@@ -58,12 +58,9 @@ export class PanelsoldComponent implements OnInit {
 
 
   ngOnInit(): void {
-    console.log(this.data)
+    
   }
 
 
-  onPrint(){
-    window.print();
-}
    
 }
