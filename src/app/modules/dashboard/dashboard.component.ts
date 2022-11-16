@@ -7,12 +7,15 @@ import { ApiiService } from 'src/app/service/apii.service';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
+
+
 export class DashboardComponent implements OnInit {
 
   dat  : any ;
-  totalconge : number = 0 
-  totalcongeMois : number = 0 
-  porsentage :  number = 0 
+  totalconge  = 0 
+  totalcongeMois  = 0 
+  
+
   constructor(public ser:ApiiService) {
     
 
@@ -24,8 +27,8 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
 
   
+    console.log(this.totalconge+this.totalconge)
 
-    console.log(this.porsentage)
 
     this.ser.nombreConge().subscribe({
       next: (data) => {
