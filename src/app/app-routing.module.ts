@@ -17,6 +17,8 @@ import { TestComponent } from './modules/test/test.component';
 
 import { EmployeAccepterComponent } from './modules/listemployer/employe-accepter/employe-accepter.component';
 import { EmployeRefuserComponent } from './modules/listemployer/employe-refuser/employe-refuser.component';
+import { ProfilupdateComponent } from './modules/user/profilupdate/profilupdate.component';
+
 
 
 
@@ -86,6 +88,10 @@ const routes: Routes = [
   {
     path:'demanderefuser',
      component:  DemanderefuserComponent,canActivate:[GardeGuard]
+  },
+  {
+    path:'profilupdate',
+     component:  ProfilupdateComponent,canActivate:[GardeGuard]
   },
 
 

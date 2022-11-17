@@ -31,6 +31,7 @@ import { NewdemandeComponent } from 'src/app/modules/conge/newdemande/newdemande
 import { PanelsoldComponent } from 'src/app/modules/conge/panelsold/panelsold.component';
 import { DemandeaccepterComponent } from 'src/app/modules/conge/demandeaccepter/demandeaccepter.component';
 import { DemanderefuserComponent } from 'src/app/modules/conge/demanderefuser/demanderefuser.component';
+import { ProfilupdateComponent } from 'src/app/modules/user/profilupdate/profilupdate.component';
 
 
 
@@ -57,7 +58,8 @@ import { DemanderefuserComponent } from 'src/app/modules/conge/demanderefuser/de
     NewdemandeComponent,
     PanelsoldComponent,
     DemanderefuserComponent,
-    DemandeaccepterComponent
+    DemandeaccepterComponent,
+    ProfilupdateComponent
   ],
   imports: [
     CommonModule,
