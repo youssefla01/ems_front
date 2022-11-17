@@ -32,6 +32,7 @@ import { PanelsoldComponent } from 'src/app/modules/conge/panelsold/panelsold.co
 import { DemandeaccepterComponent } from 'src/app/modules/conge/demandeaccepter/demandeaccepter.component';
 import { DemanderefuserComponent } from 'src/app/modules/conge/demanderefuser/demanderefuser.component';
 import { ProfilupdateComponent } from 'src/app/modules/user/profilupdate/profilupdate.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 
@@ -80,7 +81,8 @@ import { ProfilupdateComponent } from 'src/app/modules/user/profilupdate/profilu
     MatDatepickerModule,
     MatNativeDateModule,
     FormsModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatSnackBarModule
     
    
 

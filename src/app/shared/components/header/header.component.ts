@@ -1,5 +1,9 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Route, Router } from '@angular/router';
+import { MatSnackBar,
+  MatSnackBarHorizontalPosition,
+  MatSnackBarVerticalPosition,} from '@angular/material/snack-bar';
+
 
 @Component({
   selector: 'app-header',
@@ -7,10 +11,12 @@ import { Route, Router } from '@angular/router';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  horizontalPosition: MatSnackBarHorizontalPosition = 'right';
+  verticalPosition: MatSnackBarVerticalPosition = 'top';
 
   @Output() toggleSideBarForMe: EventEmitter<any> = new EventEmitter();
 
-  constructor(private route : Router) { }
+  constructor(private route : Router , private _snackBar: MatSnackBar) { }
 
   ngOnInit() { 
     
@@ -35,5 +41,12 @@ export class HeaderComponent implements OnInit {
     this.route.navigate(['/login']);
     console.log('dd')
   }
+  
+  openSnackBar() {
+    this._snackBar.open('Nouveau Employe!!', 'consulter', {
+      horizontalPosition: this.horizontalPosition,
+      verticalPosition: this.verticalPosition,
+    });
 
+}
 }
