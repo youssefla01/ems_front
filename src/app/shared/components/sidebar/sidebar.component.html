@@ -8,13 +8,13 @@
 
     <mat-divider></mat-divider>
 
-    <h2 matSubheader>ADMIN :</h2>
+    <h2 matSubheader *ngIf="admin=='admin'">ADMIN :</h2>
     <a mat-list-item routerLinkActive="list-item-active" routerLink="/admin"><mat-icon>home</mat-icon> Dashboard</a>
     <!--<a mat-list-item routerLinkActive="list-item-active" [matMenuTriggerFor]="menu1"><mat-icon>supervisor_account</mat-icon> Liste employer</a>
     <mat-menu #menu1="matMenu">
        
       </mat-menu>-->
-    <mat-accordion>
+    <mat-accordion *ngIf="admin=='admin'" >
         <mat-expansion-panel (opened)="panelOpenState = true"
                              (closed)="panelOpenState = false">
           <mat-expansion-panel-header>
@@ -25,7 +25,7 @@
           <a mat-list-item routerLinkActive="list-item-active" routerLink="/admin/employeRefuser"><mat-icon>thumb_down</mat-icon>Employe refuser </a>
         </mat-expansion-panel>
     </mat-accordion>
-    <mat-accordion>
+    <mat-accordion *ngIf="admin=='admin'">
         <mat-expansion-panel (opened)="panelOpenState = true"
                              (closed)="panelOpenState = false">
           <mat-expansion-panel-header>
@@ -51,6 +51,18 @@
         <mat-icon>import_contacts</mat-icon>
         Contacts
     </a> -->
+    <mat-accordion *ngIf="user=='user'">
+      <mat-expansion-panel (opened)="panelOpenState = true"
+                           (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+              <mat-icon>list</mat-icon>User
+        </mat-expansion-panel-header>
+        <a mat-list-item routerLinkActive="list-item-active"  routerLink="/admin/newdemande"><mat-icon>note_add</mat-icon> Nouveau Demande</a>
+        <a mat-list-item routerLinkActive="list-item-active"  routerLink="/admin/demandeaccepter"><mat-icon>done_outline</mat-icon>Mes Demande </a>
+        <a mat-list-item routerLinkActive="list-item-active"  routerLink="/admin/demanderefuser"><mat-icon>thumb_down</mat-icon> Mon Sold </a>
+        <a mat-list-item routerLinkActive="list-item-active"  routerLink="/admin/demanderefuser"><mat-icon>thumb_down</mat-icon> Contact </a>
+      </mat-expansion-panel>
+    </mat-accordion>
 
  
 </mat-nav-list>

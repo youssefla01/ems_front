@@ -7,10 +7,15 @@ import {MatExpansionModule} from '@angular/material/expansion';
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent implements OnInit {
+  admin :any
+  user : any 
   panelOpenState = false;
   constructor() { }
 
   ngOnInit(): void {
+  this.admin = localStorage.getItem('admin')
+  this.user =localStorage.getItem('user')
+    
   }
 
 }

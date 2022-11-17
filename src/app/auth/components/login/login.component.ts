@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
       localStorage.clear()
       localStorage.setItem('token',res.token)
       localStorage.setItem('user',res.user)
-      this.rout.navigate(['/user']);
+      this.rout.navigate(['/admin']);
     }
     if(res.token && res.admin) 
     {

@@ -18,35 +18,13 @@ import { TestComponent } from './modules/test/test.component';
 import { EmployeAccepterComponent } from './modules/listemployer/employe-accepter/employe-accepter.component';
 import { EmployeRefuserComponent } from './modules/listemployer/employe-refuser/employe-refuser.component';
 
+import { AccesGuard } from './acces/acces.guard';
+
 
 
 
 const routes: Routes = [
 
-
-  
-  {
-   
-    path: '',
-    component: LoginComponent, } , 
-
-    {
-      path: 'user',
-      component: UserComponent,
-      
-      children: [{
-        path: '',
-        component: UserComponent,canActivate:[GardeuserGuard]
-      } ,  
-      {
-        path:'contact',
-         component:  ContactComponent,canActivate:[GardeuserGuard]
-      }
-     
-      
-    
-    
-    ]},
 
   {
   path: 'admin',
@@ -54,7 +32,7 @@ const routes: Routes = [
   
   children: [{
     path: '',
-    component: DashboardComponent,canActivate:[GardeGuard] 
+    component: DashboardComponent,canActivate:[AccesGuard]
   },{
      path:'posts',
      component: PostsComponent ,canActivate:[GardeGuard]
