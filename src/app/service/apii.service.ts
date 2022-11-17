@@ -43,7 +43,7 @@ getAllcontrattype() :Observable<any>{ return this.http.get('http://localhost:808
 
 //>>>>>>>>>>>>>>>>>>>> contrat  createContrat
 createContrat (user:any): Observable<any> { return this.http.post('http://localhost:8081/createContrat',user)}
-
+updateContrat(user:any): Observable<any> { return this.http.post('http://localhost:8081/updateContrat',user)}
 
 
 

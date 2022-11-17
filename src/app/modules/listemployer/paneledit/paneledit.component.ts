@@ -33,21 +33,28 @@ export class PaneleditComponent implements OnInit {
   
     
 }
-  updatUtil(){
-    const datarow = {
-      nom : this.dataArray.nom,
-      prenom : this.dataArray.prenom
-    };
-    console.log(this.dataArray.nom)
-    this.ser.updateUtil(this.data, datarow).subscribe(
-      response => {
-        console.log(response);
-      },
-      error => {console.log(error)
-      });
+
+
+updateContrat(id_contrat:number,date_fin : any)
+{
+  
+  let data=date_fin.value ; // objet 1 
+  let user ={id_contrat : id_contrat } // objet 2 
+  var obj = Object.assign(data, user);
+
+
+ 
+
 
   
-  }
+  console.log(obj)
+   this.api.updateContrat(obj).subscribe(send=>console.log(send) )
+    window.location.reload();
+
+}
+
+
+
 
     refresh(): void {
         this.rout.navigateByUrl("/admin", { skipLocationChange: true }).then(() => {
