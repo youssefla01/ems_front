@@ -37,10 +37,10 @@
     <label for="exampleFormControlTextarea1">motif : </label>
     <textarea class="form-control" id="motif" rows="3"   ngModel  required  #motif="ngModel"  name="motif" placeholder="motif"></textarea>
   </div>
-
-  <div class="col-12">
-    <button type="button" class="btn btn-success" (click)="accepter(row.id_conge,form)" >Accepter</button><br><br>
-    <button type="button" class="btn btn-danger" (click)="refuser(row.id_conge,form)">Refuser</button>
+  <div class="col-12"style="margin-left:225px">
+    <button mat-raised-button color="warn" (click)="refuser(row.id_conge,form)">Refuser</button>
+    <button style="margin-left:8px;background-color:green;color:white" mat-raised-button  (click)="accepter(row.id_conge,form)">Accepter</button>
+    <label for=""></label>
   </div>
 </form>
 

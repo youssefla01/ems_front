@@ -34,27 +34,6 @@ export class NewdemandeComponent implements OnInit {
     console.log(id)
    }
 
-
-   accepter(id:any)
-   {
-      
-        this.ser.postCongeAccepter(id).subscribe(
-     
-     
-          send=>console.log(send) )
-          window.location.reload();
-   }
-   refuser(id:any)
-   {
-
-  
-    this.ser.postCongeRefuser(id).subscribe(
- 
- 
-      send=>console.log(send) )
-      window.location.reload();
-   }
-
   ngOnInit(): void {
   }
 
