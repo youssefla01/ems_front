@@ -38,8 +38,9 @@ export class PanelsoldComponent implements OnInit {
   var obj = Object.assign(data, user); //  objet 1+2  pour 
 
      
-      this.api.postCongeAccepter(obj).subscribe(send=>console.log(send));
-      window.location.reload();
+  this.api.postCongeAccepter(obj).subscribe(send=>console.log(send));
+  window.location.reload();
+  console.log(obj)
 
   }
   refuser(id:any,motif:any)

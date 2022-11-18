@@ -24,7 +24,7 @@ export class PaneleditComponent implements OnInit {
       next: (data) => {
         this.dataArray = data;
         console.log(data);
-        console.log('nom' ,this.data.nom);
+       
       },
       error: (e) => console.error(e)
       
