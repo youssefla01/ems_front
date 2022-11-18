@@ -73,8 +73,8 @@ refuseruser(id_utilisateur : any) :Observable<any>{ return this.http.get('http:/
 getuseraccepte() :Observable<any>{ return this.http.get('http://localhost:8081/getuseraccepte')};
 //get demande refuser
 getuserrefuser() :Observable<any>{ return this.http.get('http://localhost:8081/getuserrefuser')};
-
-
+// get user  avec id 
+getutilisateur(id_utilisateur : any) :Observable<any>{ return this.http.get('http://localhost:8081/getutilisateur/'+id_utilisateur)};
 
 
 

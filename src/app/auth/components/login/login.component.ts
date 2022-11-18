@@ -45,6 +45,7 @@ export class LoginComponent implements OnInit {
       localStorage.clear()
       localStorage.setItem('token',res.token)
       localStorage.setItem('user',res.user)
+      localStorage.setItem('id_utilisateur',res.id_utilisateur)
       this.rout.navigate(['/admin']);
     }
     if(res.token && res.admin) 
@@ -52,6 +53,7 @@ export class LoginComponent implements OnInit {
       localStorage.clear()
       localStorage.setItem('token',res.token)
       localStorage.setItem('admin',res.admin)
+      localStorage.setItem('id_utilisateur',res.id_utilisateur)
       this.rout.navigate(['/admin']);
     }
 

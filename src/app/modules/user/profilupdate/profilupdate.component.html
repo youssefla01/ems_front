@@ -8,8 +8,9 @@
             <div class="card-body text-center">
               <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
                 class="rounded-circle img-fluid" style="width: 150px;">
-              <h5 class="my-3">John Smith</h5>
-              <p class="text-muted mb-1">Directeur génerale</p>
+              <h5 class="my-3">{{dataArray.prenom}}  {{dataArray.nom}}</h5>
+              <p class="text-muted mb-1">{{admin}}</p>
+              <p class="text-muted mb-1">{{user}}</p>
               <p class="text-muted mb-4">Paris Rue du louvre 75001 </p>
             </div>
           </div>
@@ -31,46 +32,30 @@
                   <p class="mb-0">Email</p>
                 </div>
                 <div class="col-sm-9">
-                    <input type="mail"  ngModel #nbr_jours="ngModel" required name="mail"  disabled>
+                    <input type="mail"  ngModel #nbr_jours="ngModel" required name="mail"  >
+                </div>
+              </div>
+              <hr>
+
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">NV Password</p>
+                </div>
+                <div class="col-sm-9">
+                    <input type="password"  ngModel #nbr_jours="ngModel" required name="mail"  >
                 </div>
               </div>
               <hr>
               <div class="row">
                 <div class="col-sm-3">
-                  <p class="mb-0">username</p>
+                  <p class="mb-0">A nouveaux  password</p>
                 </div>
                 <div class="col-sm-9">
-                    <input type="text"  ngModel #nbr_jours="ngModel" required name="mail"  disabled>
+                    <input type="password"  ngModel #nbr_jours="ngModel" required name="mail"  >
                 </div>
               </div>
-              <hr>
-              <div class="row">
-                <div class="col-sm-3">
-                  <p class="mb-0">Password</p>
-                </div>
-                <div class="col-sm-9">
-                    <input type="password"  ngModel #nbr_jours="ngModel" required name="mail"  disabled>
-                </div>
-              </div>
-              <hr>
-              <div class="row">
-                <div class="col-sm-3">
-                  <p class="mb-0">Changer le password</p>
-                </div>
-                <div class="col-sm-9">
-                    <input type="password"  ngModel #nbr_jours="ngModel" required name="mail"  disabled>
-                </div>
-              </div>
-              <hr>
-              <div class="row">
-                <div class="col-sm-3">
-                  <p class="mb-0">Date de naissance</p>
-                </div>
-                <div class="col-sm-9">
-                    <input type="mail"  ngModel #nbr_jours="ngModel" required name="mail"  disabled>
-                </div>
-              </div>
-              <hr>
+             
               <div class="row">
                 <div class="col-sm-3">
                   <p class="mb-0">Address</p>

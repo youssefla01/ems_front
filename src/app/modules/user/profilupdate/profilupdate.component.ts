@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { ApiiService } from 'src/app/service/apii.service';
 
 @Component({
   selector: 'app-profilupdate',
@@ -7,9 +9,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfilupdateComponent implements OnInit {
 
-  constructor() { }
+  dataArray:any = [];
+  a : any;
+ user:any;
+ admin : any; 
+  constructor(public dialog: MatDialog ,public ser:ApiiService) {
+    
+    this.a=localStorage.getItem('id_utilisateur')
+ 
+
+    this.ser.getutilisateur(this.a).subscribe({
+        next: (data) => {
+          this.dataArray = data;
+          console.log(this.dataArray)
+        
+        },
+        error: (e) => console.error(e)
+      
+    });
+    
+
+    
+  }
 
   ngOnInit(): void {
+    this.admin = localStorage.getItem('admin')
+     this.user =localStorage.getItem('user')
+
   }
 
 }
