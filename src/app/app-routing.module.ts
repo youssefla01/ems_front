@@ -20,35 +20,13 @@ import { EmployeRefuserComponent } from './modules/listemployer/employe-refuser/
 import { ProfilupdateComponent } from './modules/user/profilupdate/profilupdate.component';
 
 
+import { AccesGuard } from './acces/acces.guard';
+
 
 
 
 const routes: Routes = [
 
-
-  
-  {
-   
-    path: '',
-    component: LoginComponent, } , 
-
-    {
-      path: 'user',
-      component: UserComponent,
-      
-      children: [{
-        path: '',
-        component: UserComponent,canActivate:[GardeuserGuard]
-      } ,  
-      {
-        path:'contact',
-         component:  ContactComponent,canActivate:[GardeuserGuard]
-      }
-     
-      
-    
-    
-    ]},
 
   {
   path: 'admin',
@@ -56,7 +34,7 @@ const routes: Routes = [
   
   children: [{
     path: '',
-    component: DashboardComponent,canActivate:[GardeGuard] 
+    component: DashboardComponent,canActivate:[AccesGuard]
   },{
      path:'posts',
      component: PostsComponent ,canActivate:[GardeGuard]

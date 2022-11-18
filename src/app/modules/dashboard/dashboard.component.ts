@@ -8,9 +8,15 @@ import { ApiiService } from 'src/app/service/apii.service';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
+
+
 export class DashboardComponent implements OnInit {
 
-  nombreconge : any 
+  dat  : any ;
+  totalconge  = 0 
+  totalcongeMois  = 0 
+  
+
   constructor(public ser:ApiiService) {
     
 
@@ -18,19 +24,37 @@ export class DashboardComponent implements OnInit {
   
     
   }
+
   ngOnInit(): void {
+
+  
+    console.log(this.totalconge+this.totalconge)
+
 
     this.ser.nombreConge().subscribe({
       next: (data) => {
 
-        this.nombreconge = JSON.stringify(data);
-
-        console.log(this.nombreconge);
+        this.dat=data;
+       this.totalconge=this.dat[0].nombreConge
+       
       },
       error: (e) => console.error(e)
     
   });
+
+  this.ser.nombrecongemois().subscribe({
+    next: (data) => {
+
+      this.dat=data;
+     this.totalcongeMois=this.dat[0].nbr_conge_mois
+     
+    },
+    error: (e) => console.error(e)
+
   
+});
+  
+ 
     
   }
 
