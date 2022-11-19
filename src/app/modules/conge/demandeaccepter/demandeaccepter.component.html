@@ -25,7 +25,7 @@
         <td>{{i.nbr_jours }}</td>
         <td>{{i.date_debut_conge | date : "MM/dd/yy"}}</td>
         <td>{{i.motif }}</td>
-        <td><button mat-icon-button color="primary"><mat-icon>remove_red_eye</mat-icon></button></td>
+        <td><button mat-icon-button color="primary" (click)="openDialog(i.id_utilisateur)"><mat-icon>remove_red_eye</mat-icon></button></td>
     </tr>
   </tbody>
 </table>

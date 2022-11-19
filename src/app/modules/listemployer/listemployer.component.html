@@ -15,7 +15,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let row of dataArray ">
+    <tr  *ngFor="let row of dataArray ">
       <th scope="row">{{ row.id_utilisateur }}</th>
       <td>{{ row.prenom }}</td>
       <td>{{ row.nom }}</td>
@@ -26,7 +26,7 @@
         <button mat-icon-button color="primary" (click)="openDialog1(row.id_utilisateur)"><mat-icon>edit</mat-icon></button>
       </td>
       <td>
-        <button mat-icon-button style="color : green"  (click)="accepter(row.id_utilisateur)"><mat-icon>check_circle</mat-icon></button>
+        
         <button mat-icon-button color="warn"  (click)="refuser(row.id_utilisateur)">	<mat-icon>cancel</mat-icon></button>
       </td>
     </tr>

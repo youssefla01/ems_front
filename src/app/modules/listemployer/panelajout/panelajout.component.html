@@ -54,6 +54,8 @@
   <div class="col-12">
     <button mat-raised-button color="warn" mat-dialog-close>Fermer</button>
     <button style="margin-left:8px" mat-raised-button color="primary" (click)="onPrint()"  [disabled]="form.invalid">Imprimer</button>
+    <button style="margin-left:8px" mat-raised-button color="primary" (click)="accepter(row.id_utilisateur,row.date_debut)"  [disabled]="form.invalid">accepter</button>
+
     <label for=""></label>
   </div>
 </form>

@@ -35,8 +35,6 @@ export class CreatuserComponent implements OnInit {
     try{
    
    let data=form.value ;
-  //  localStorage.setItem('usernam',data.username);
-  
    this.api.Createuser(data).subscribe(
     (data) => {
       this.id_user = {

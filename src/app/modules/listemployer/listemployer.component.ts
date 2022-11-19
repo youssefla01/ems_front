@@ -22,13 +22,17 @@ export class ListemployerComponent implements AfterViewInit {
 
 
   dataArray:any = [];
-  
+   booksByStoreID:any= [] ;
+   objet = {}
+   
   constructor(public dialog: MatDialog ,public ser:ApiiService) {
     
     this.ser.getdemandeuser().subscribe({
         next: (data) => {
           this.dataArray = data;
-          console.log(data);
+         this.objet = Object.assign(data);
+
+          
         },
         error: (e) => console.error(e)
       
@@ -39,16 +43,10 @@ export class ListemployerComponent implements AfterViewInit {
     
   }
 
-  accepter(id_utilisateur : any)
-  {
-    this.ser.accepteuser(id_utilisateur).subscribe(
-     
-     
-      send=>console.log(send) )
-      window.location.reload();
+ 
+   
+  
 
-  }
-    
     refuser(id_utilisateur : any)
   {
 
