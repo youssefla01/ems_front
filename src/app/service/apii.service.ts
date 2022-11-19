@@ -30,8 +30,9 @@ postCongeAccepter(id_conge:any) :Observable<any>{ return this.http.post('http://
 postCongeRefuser(id_conge:any) :Observable<any>{ return this.http.post('http://localhost:8081/postcongerefuser',id_conge)};
 
 
-//create sole 
+//create solde 
 createSolde(id_sole:any) :Observable<any>{ return this.http.post('http://localhost:8081/createSolde',id_sole)};
+modifiersolde(data:any) :Observable<any>{ return this.http.post('http://localhost:8081/modifiersolde',data)};
 
 
 //>>>>>>>>>>>>>>>>>>> type contat 
