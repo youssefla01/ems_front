@@ -73,8 +73,20 @@ const routes: Routes = [
   },
   {
     path:'profilupdate',
-     component:  ProfilupdateComponent,canActivate:[GardeGuard]
-  },
+     component:  ProfilupdateComponent,canActivate:[AccesGuard]
+  }
+
+
+ 
+ 
+]} , 
+
+{
+path: 'user',
+component: DefaultComponent,
+
+children: [
+  
   {
     path:'demandeconge',
      component: DemandecongeComponent,
@@ -90,12 +102,11 @@ const routes: Routes = [
   {
     path:'sold',
      component: SoldComponent,
-  },
+  }
 
 
- 
- 
 ]
+
 
 
 

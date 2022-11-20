@@ -8,24 +8,28 @@
       <th scope="col">#</th>
       <th scope="col">type de congé</th>
       <th scope="col">Date début </th>
-      <th scope="col">Date Fin</th>
+      <th scope="col">Date fin </th>
       <th scope="col">Nombre de jour</th>
+      
       <th scope="col"> Statut </th>
+      <th scope="col">motif</th>
     </tr>
   </thead>
   <tbody>
  
-    <tr>
-      <th scope="row">1</th>
-      <td>Congé sans solde</td>
-      <td>09/10/2022</td>
-      <td>19/10/2022</td>
-      <td>10 Jour</td>
+    <tr *ngFor="let row of dataArray ">
+      <th scope="row">{{row.id_conge}}</th>
+      <td>{{row.label}}</td>
+      
+      <td>{{row.date_debut_conge}}</td>
+      <td>{{row.date_fin_conge}}</td>
+      <td>{{row.nbr_jours}}</td>
       <td>
-        <button mat-icon-button class="text-warning"><mat-icon>refresh</mat-icon>En attend </button><br>
-        <button mat-icon-button class="text-success"><mat-icon>check_circle</mat-icon>Accepter</button><br>
-        <button mat-icon-button color="warn"><mat-icon>cancel</mat-icon>Refuser</button>
+        <button mat-icon-button class="text-warning" *ngIf="row.accepter==0 && row.refuser==0" ><mat-icon>refresh</mat-icon>En attend </button><br>
+        <button mat-icon-button class="text-success"  *ngIf="row.accepter==1 && row.refuser==0" ><mat-icon>check_circle</mat-icon>Accepter</button><br>
+        <button mat-icon-button color="warn" *ngIf="row.accepter==0 && row.refuser==1" ><mat-icon>cancel</mat-icon>Refuser</button>
       </td>
+      <td>{{row.motif}}</td>
     </tr>
   </tbody>
 </table>

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ApiiService } from 'src/app/service/apii.service';
+import { ServerService } from 'src/app/service/server.service';
 
 @Component({
   selector: 'app-sold',
@@ -7,9 +10,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SoldComponent implements OnInit {
 
-  constructor() { }
+  id_user  = localStorage.getItem('id_utilisateur') 
+  dataArray:any = [];
+
+  constructor(private api:ApiiService  , private rout:Router ,public ser:ServerService ) { 
+
+    
+    this.api.getsoldejust(69).subscribe({
+      next: (data) => {
+        this.dataArray = data;
+        console.log(data);
+      },
+      error: (e) => console.error(e)
+    
+  });
+    
+  }
+
 
   ngOnInit(): void {
+
+    
   }
 
 }

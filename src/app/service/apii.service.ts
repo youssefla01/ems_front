@@ -28,11 +28,17 @@ Congehistorique() :Observable<any>{ return this.http.get('http://localhost:8081/
 postCongeAccepter(id_conge:any) :Observable<any>{ return this.http.post('http://localhost:8081/postcongeaccepter',id_conge)};
 // post conge accepter 
 postCongeRefuser(id_conge:any) :Observable<any>{ return this.http.post('http://localhost:8081/postcongerefuser',id_conge)};
+//creat conge 
+createConge(data:any) :Observable<any>{ return this.http.post('http://localhost:8081/createConge',data)};
+// avoire tous les conge par persoone 
+congeparuser(id_utilisateur : any) :Observable<any>{ return this.http.get('http://localhost:8081/congeparuser/'+id_utilisateur)};
 
 
 //create solde 
 createSolde(id_sole:any) :Observable<any>{ return this.http.post('http://localhost:8081/createSolde',id_sole)};
 modifiersolde(data:any) :Observable<any>{ return this.http.post('http://localhost:8081/modifiersolde',data)};
+getsolde(id_utilisateur : any) :Observable<any>{ return this.http.get('http://localhost:8081/getsolde/'+id_utilisateur)};
+getsoldejust(id_utilisateur : any) :Observable<any>{ return this.http.get('http://localhost:8081/getsoldejust/'+id_utilisateur)};
 
 
 //>>>>>>>>>>>>>>>>>>> type contat 
@@ -94,7 +100,6 @@ getutilisateur(id_utilisateur : any) :Observable<any>{ return this.http.get('htt
 
 
 
- //>>>>>>>>>>>>>>>>>>>>>solde /getsolde/:idutilisateur 
- getsolde(id_utilisateur : any) :Observable<any>{ return this.http.get('http://localhost:8081/getsolde/'+id_utilisateur)};
+ 
 
 }
