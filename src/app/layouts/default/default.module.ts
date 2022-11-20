@@ -33,6 +33,10 @@ import { DemandeaccepterComponent } from 'src/app/modules/conge/demandeaccepter/
 import { DemanderefuserComponent } from 'src/app/modules/conge/demanderefuser/demanderefuser.component';
 import { ProfilupdateComponent } from 'src/app/modules/user/profilupdate/profilupdate.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { ContactuserComponent } from 'src/app/modules/user/contactuser/contactuser.component';
+import { ListdemandeComponent } from 'src/app/modules/user/listdemande/listdemande.component';
+import { SoldComponent } from 'src/app/modules/user/sold/sold.component';
+import { DemandecongeComponent } from 'src/app/modules/user/demandeconge/demandeconge.component';
 
 
 
@@ -60,7 +64,13 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     PanelsoldComponent,
     DemanderefuserComponent,
     DemandeaccepterComponent,
-    ProfilupdateComponent
+    ProfilupdateComponent,
+    ContactComponent,
+    ListdemandeComponent,
+    SoldComponent,
+    ContactuserComponent,
+    DemandecongeComponent 
+    
   ],
   imports: [
     CommonModule,

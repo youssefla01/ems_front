@@ -32,11 +32,15 @@ import { PanelsoldComponent } from './modules/conge/panelsold/panelsold.componen
 
 
 
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
     TestComponent,
+
   
     
 

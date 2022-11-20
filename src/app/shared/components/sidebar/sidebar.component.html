@@ -53,19 +53,9 @@
         Contacts
     </a> -->
     <mat-accordion *ngIf="user=='user'">
-      <mat-expansion-panel (opened)="panelOpenState = true"
-                           (closed)="panelOpenState = false">
-        <mat-expansion-panel-header>
-              <mat-icon>list</mat-icon>User
-        </mat-expansion-panel-header>
-        <a mat-list-item routerLinkActive="list-item-active"  routerLink="/admin/newdemande"><mat-icon>note_add</mat-icon> Nouveau Demande</a>
-        <a mat-list-item routerLinkActive="list-item-active"  routerLink="/admin/demandeaccepter"><mat-icon>done_outline</mat-icon>Mes Demande </a>
-        <a mat-list-item routerLinkActive="list-item-active"  routerLink="/admin/demanderefuser"><mat-icon>thumb_down</mat-icon> Mon Sold </a>
-        <a mat-list-item routerLinkActive="list-item-active"  routerLink="/admin/demanderefuser"><mat-icon>thumb_down</mat-icon> Contact </a>
-      </mat-expansion-panel>
-    </mat-accordion>
-
- 
-</mat-nav-list>
+<a mat-list-item routerLinkActive="list-item-active"  routerLink="/admin/demandeconge"><mat-icon>note_add</mat-icon> Nouveau Demande</a>
+<a mat-list-item routerLinkActive="list-item-active"  routerLink="/admin/listdemande"><mat-icon>list</mat-icon>Mes Demande </a>
+<a mat-list-item routerLinkActive="list-item-active"  routerLink="/admin/sold"><mat-icon>contact_support</mat-icon> Mon Solde </a>
+<a mat-list-item routerLinkActive="list-item-active"  routerLink="/admin/contact"><mat-icon> forum</mat-icon> Contact </a>
 
 

@@ -1,0 +1,40 @@
+<h1 mat-dialog-title>Demander un nouveau congé</h1>
+<form #form="ngForm"  class="row g-3" >
+    <div class="col-md-4">
+        <label for="type_contrat">Type de congé</label>
+        <select name="type_contrat" class="form-select"    ngModel  required  #type_contrat="ngModel"  aria-label="Default select example">
+          <option selected>-- Seléctioner un type --</option>
+          <option selected>congé parental</option>
+          <option selected>congé sans solde</option>
+          <option selected>congé maternel</option>
+          <option selected>déces</option>
+        </select>
+        <div class="alert-danger"  *ngIf="type_contrat.touched && type_contrat.invalid"> remplissage de type est obligatoir !</div>
+      </div>
+      <div class="col-md-8"></div>
+  <div class="col-md-4">
+    <label for="inputPassword4" class="form-label"   >date début congé    :</label> 
+    <input type="date" class="form-control" ngModel #date_de_naissance="ngModel" required name="date_de_naissance" placeholder="date_de_naissance">
+    <div class="alert-danger" *ngIf="date_de_naissance.touched  && date_de_naissance.invalid "> remplissage de votre date debut est obligatoir !</div>
+ 
+  </div>
+  <div class="col-4">
+      <label for="inputAddress" class="form-label"  >Date Fin      :</label>
+      <input type="date" class="form-control" ngModel #debutcontrat="ngModel" required  name="debutcontrat" placeholder="debutcontrat">
+      <div class="alert-danger" *ngIf="debutcontrat.touched  && debutcontrat.invalid "> remplissage de votre date fin  est obligatoir !</div>
+    </div>
+    <div class="col-4"></div>
+    <div class="col-4">
+        <label for="inputAddress" class="form-label"  >Nombre de jour     :</label>
+        <input type="text" class="form-control" name="fincontrat" disabled>
+    </div>
+    <div class="col-12">
+        <label  class="form-label"  >Commentaire    :</label>
+        <textarea type="text" class="form-control"></textarea>
+    </div>
+  <div class="col-12" fxLayoutAlign="center">
+   <button style="margin-left:8px" fxLayoutAlign="flex-end" mat-raised-button color="primary"><mat-icon>send</mat-icon> Envoyer</button>
+    <label for=""></label>
+  </div>
+</form>
+

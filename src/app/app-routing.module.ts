@@ -21,6 +21,10 @@ import { ProfilupdateComponent } from './modules/user/profilupdate/profilupdate.
 
 
 import { AccesGuard } from './acces/acces.guard';
+import { DemandecongeComponent } from './modules/user/demandeconge/demandeconge.component';
+import { ListdemandeComponent } from './modules/user/listdemande/listdemande.component';
+import { ContactuserComponent } from './modules/user/contactuser/contactuser.component';
+import { SoldComponent } from './modules/user/sold/sold.component';
 
 
 
@@ -70,6 +74,22 @@ const routes: Routes = [
   {
     path:'profilupdate',
      component:  ProfilupdateComponent,canActivate:[GardeGuard]
+  },
+  {
+    path:'demandeconge',
+     component: DemandecongeComponent,
+  },
+  {
+    path:'listdemande',
+     component: ListdemandeComponent,
+  },
+  {
+    path:'contact',
+     component: ContactuserComponent,
+  },
+  {
+    path:'sold',
+     component: SoldComponent,
   },
 
 
