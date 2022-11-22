@@ -8,9 +8,11 @@ import { ApiiService } from 'src/app/service/apii.service';
 })
 export class ListdemandeComponent implements OnInit {
 dataArray : any 
-  constructor(private ser:ApiiService) { 
 
-    this.ser.congeparuser(69).subscribe({
+  constructor(private ser:ApiiService) { 
+   
+    let id_utilisateur = localStorage.getItem('id_utilisateur');
+    this.ser.congeparuser(id_utilisateur).subscribe({
       next: (data) => {
         this.dataArray = data;
         console.log(data);
@@ -26,8 +28,7 @@ dataArray : any
 
   ngOnInit(): void {
 
-    let id_utilisateur = localStorage.getItem('id_utilisateur');
-    console.log(id_utilisateur)
+
     
   }
 

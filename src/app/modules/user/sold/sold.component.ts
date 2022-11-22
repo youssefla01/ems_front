@@ -16,7 +16,7 @@ export class SoldComponent implements OnInit {
   constructor(private api:ApiiService  , private rout:Router ,public ser:ServerService ) { 
 
     
-    this.api.getsoldejust(69).subscribe({
+    this.api.getsoldejust(this.id_user).subscribe({
       next: (data) => {
         this.dataArray = data;
         console.log(data);
