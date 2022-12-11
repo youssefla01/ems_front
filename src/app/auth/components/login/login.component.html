@@ -1,50 +1,46 @@
 
-
-
-<section class="vh-100 gradient-custom">
-  <div class="container py-5 h-100">
+<section class="vh-100">
+  <div class="container-fluid h-custom">
     <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-        <div class="card bg-dark text-white" style="border-radius: 1rem;">
-          <div class="card-body p-5 text-center">
-
-            <div class="mb-md-5 mt-md-4 pb-5">
-
-              <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
-              <p class="text-white-50 mb-5">Please enter your login and password!</p>
-              <form #form="ngForm" class="form-check" (ngSubmit)="login(form)">
-
-
-              <div class="form-outline form-white mb-4">
-                <input type="text" class="form-control" ngModel  required  #username="ngModel"  name="username" placeholder="username">
-                <label class="form-label" for="typeEmailX">Username</label>
-              </div>
-
-              <div class="form-outline form-white mb-4">
-                <input type="password" class="form-control" ngModel  required  #passeword="ngModel"  name="passeword" placeholder="passeword">
-                <label class="form-label" for="typePasswordX">password</label>
-              </div>
-              <div class="col-12">
-                <button type="submit" [disabled]="form.invalid" class="btn btn-outline-light btn-lg px-5"  >connexion</button>
-              </div>
-
-              
-
-              <div class="d-flex justify-content-center text-center mt-4 pt-1">
-                <a href="#!" class="text-white"><i class="fab fa-facebook-f fa-lg"></i></a>
-                <a href="#!" class="text-white"><i class="fab fa-twitter fa-lg mx-4 px-2"></i></a>
-                <a href="#!" class="text-white"><i class="fab fa-google fa-lg"></i></a>
-              </div>
-            </form>
-            </div>
-
-            <div>
-              <p class="mb-0">Don't have an account? <a routerLink="/creatuser" class="text-white-50 fw-bold">Sign Up</a>
-              </p>
-            </div>
-
+      <div class="col-md-9 col-lg-6 col-xl-5">
+        <img src="https://d1dhn91mufybwl.cloudfront.net/collections/items/a0bb51dad28d7092e2e561i121664063/covers/page_1/medium"
+          class="img-fluid" alt="Sample image">
+      </div>
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+        <form #form="ngForm" class="form-check" (ngSubmit)="login(form)">
+          <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
           </div>
-        </div>
+
+          <div class="divider d-flex align-items-center my-4">
+            <h1>Login</h1>
+          </div>
+
+          <!-- Email input -->
+          <div class="form-outline mb-4">
+            <input type="email" id="form3Example3" class="form-control form-control-lg"
+            ngModel  required  #username="ngModel"  name="username" placeholder="username"/>
+            <label class="form-label" for="form3Example3">Username</label>
+          </div>
+
+          <!-- Password input -->
+          <div class="form-outline mb-3">
+            <input type="password" ngModel  required  #passeword="ngModel"  name="passeword" placeholder="passeword" class="form-control form-control-lg"
+              placeholder="Enter password" />
+            <label class="form-label" for="form3Example4">Password</label>
+          </div>
+
+          <div class="d-flex justify-content-between align-items-center">
+            <!-- Checkbox -->
+          </div>
+
+          <div class="text-center text-lg-start mt-4 pt-2">
+            <button type="submit" [disabled]="form.invalid" class="btn btn-lg" 
+              style="padding-left: 2.5rem; padding-right: 2.5rem;background-color:#673ab7;color:white">Login</button>
+            <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="#!"
+                class="link-danger" routerLink="/creatuser">Register</a></p>
+          </div>
+
+        </form>
       </div>
     </div>
   </div>
