@@ -10,7 +10,7 @@ export class GardeGuard implements CanActivate {
  // appelle les parametre que ce trouve  a notre servise  et  la fonction que permet de nous acceder a la page 
  constructor(private serv:ApiiService,private derict:Router)
  {
-   //...........
+   //...........test
  }
 
  canActivate(
